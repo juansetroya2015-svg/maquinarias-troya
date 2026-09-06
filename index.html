@@ -12,20 +12,31 @@
 
     <!-- ENCABEZADO -->
     <header>
-        <nav>
+    <nav class="encabezado">
 
-            <div class="menu">
-    
+        <button class="boton-menu" onclick="abrirMenu()" aria-label="Abrir menú">
+    ☰
+</button>
 
-            <div class="menu">
-                <a href="index.html">Inicio</a>
-                <a href="#maquinaria">Maquinaria</a>
-                <a href="#buscar">Busco una máquina</a>
-                <a href="#contacto">Contacto</a>
-            </div>
+<div class="fondo-menu" onclick="cerrarMenu()"></div>
 
-        </nav>
-    </header>
+<div class="menu-lateral">
+
+    <button class="cerrar-menu" onclick="cerrarMenu()">✕</button>
+
+    <a href="index.html">Inicio</a>
+    <a href="index.html#maquinaria">Maquinaria</a>
+    <a href="index.html#nosotros">Sobre nosotros</a>
+    <a href="index.html#contacto">Contacto</a>
+
+</div>
+
+        <a href="index.html" class="logo-encabezado">
+    <img src="Imagenes/portada.png" alt="Maquinarias Troya">
+</a>
+
+    </nav>
+</header>
 
 
 <!-- PORTADA -->
@@ -34,17 +45,15 @@
 
     <div class="portada-contenido">
 
-        <img src="Imagenes/portada.png" alt="Maquinarias Troya" class="logo-portada">
+    <h1>Maquinaria agrícola, vial y camiones</h1>
 
-        <p>
-            Compra, venta y reparación de maquinaria agrícola, vial y camiones 
-        </p>
+    <p>Compra, venta y reparación</p>
 
-        <a href="https://wa.me/5492392407678" class="boton-whatsapp">
-            Consultar por WhatsApp
-        </a>
+    <a href="https://wa.me/5492392407678" class="boton-whatsapp">
+        Consultar por WhatsApp
+    </a>
 
-    </div>
+</div>
 
 </section>
 
@@ -155,6 +164,20 @@
     </div>
 
 </footer>
+
+<script>
+function abrirMenu() {
+    document.querySelector(".menu-lateral").style.left = "0";
+    document.querySelector(".fondo-menu").style.opacity = "1";
+    document.querySelector(".fondo-menu").style.visibility = "visible";
+}
+
+function cerrarMenu() {
+    document.querySelector(".menu-lateral").style.left = "-280px";
+    document.querySelector(".fondo-menu").style.opacity = "0";
+    document.querySelector(".fondo-menu").style.visibility = "hidden";
+}
+</script>
 
 </body>
 
