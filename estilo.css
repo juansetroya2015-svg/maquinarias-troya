@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -5,11 +6,14 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f4f5f3;
+    background-color: #fff;
     color: #222;
 }
 
-/* ENCABEZADO */
+
+/* =========================
+   ENCABEZADO
+========================= */
 
 header {
     background-color: white;
@@ -93,8 +97,6 @@ nav.encabezado {
     opacity: 1;
 }
 
-
-
 .logo img {
     width: 280px;
     height: auto;
@@ -102,18 +104,20 @@ nav.encabezado {
 }
 
 
-/* PORTADA */
+/* =========================
+   PORTADA
+========================= */
 
 .portada {
-    min-height: 560px;
+    min-height: 700px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
 
     background:
-    linear-gradient(rgba(20, 35, 25, 0.50), rgba(20, 35, 25, 0.60)),
-    url("Imagenes/tractor.jpg");
+        linear-gradient(rgba(20, 35, 25, 0.50), rgba(20, 35, 25, 0.60)),
+        url("Imagenes/tractor.jpg");
 
     background-size: cover;
     background-position: center;
@@ -126,11 +130,11 @@ nav.encabezado {
 }
 
 .portada h1 {
-    font-size: 50px;
+    font-size: 48px;
     margin: 0 0 16px;
-    font-weight: 800;
-    line-height: 1.08;
-    letter-spacing: -0.8px;
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.4px;
     text-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
 }
 
@@ -151,7 +155,10 @@ nav.encabezado {
     opacity: 0.9;
 }
 
-/* BOTÓN WHATSAPP */
+
+/* =========================
+   BOTÓN WHATSAPP
+========================= */
 
 .boton-whatsapp {
     display: inline-block;
@@ -167,21 +174,89 @@ nav.encabezado {
 }
 
 .boton-whatsapp:hover {
-    transform: translateY(-3px);
+    transform: scale(1.05);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
 }
 
-.boton-whatsapp:hover {
-    transform: scale(1.05);
+
+/* =========================
+   SOBRE NOSOTROS
+========================= */
+
+.nosotros {
+    background-color: white;
+    padding: 75px 20px 80px;
+}
+
+.nosotros-contenido {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.nosotros-encabezado {
+    margin-bottom: 30px;
+}
+
+.nosotros-kicker {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #197E7A;
+}
+
+.nosotros-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 45px;
+}
+
+.nosotros-video {
+    width: 100%;
+    max-width: none;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.nosotros-video video {
+    width: 100%;
+    height: 400px;
+    display: block;
+    object-fit: fill;
+}
+
+.nosotros-texto {
+    width: 100%;
+}
+
+.nosotros-texto h2 {
+    margin: 0 0 22px;
+    font-size: 40px;
+    line-height: 1.15;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: -0.5px;
+}
+
+.nosotros-texto p {
+    margin: 0 0 15px;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #4B5563;
 }
 
 
-/* SECCIÓN MAQUINARIA */
+/* =========================
+   SECCIÓN MAQUINARIA
+========================= */
 
 .contenido {
     max-width: 1100px;
-    margin: 60px auto;
+    margin: 20px auto;
     padding: 20px;
+    background-color: #fff;
 }
 
 .contenido h1 {
@@ -190,66 +265,266 @@ nav.encabezado {
 }
 
 .contenido h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
+    font-size: 42px;
+    margin: 0 0 10px;
+    color: #111827;
+    font-weight: 700;
+    letter-spacing: -0.8px;
 }
 
 .contenido > p {
     font-size: 18px;
 }
+
 .descripcion-maquinaria {
-    margin-top: -15px;
-    margin-bottom: 35px;
-    color: #666;
-    font-size: 18px;
+    margin: 0 0 38px;
+    color: #6B7280;
+    font-size: 17px;
+    line-height: 1.5;
 }
 
 
-/* CATEGORÍAS */
+/* =========================
+   CATEGORÍAS
+========================= */
 
 .categorias {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+
+    /*
+       3 columnas:
+       izquierda grande
+       centro
+       derecha
+    */
+    grid-template-columns: 1.35fr 1fr 1fr;
+
+    /*
+       3 filas iguales
+    */
+    grid-template-rows: 220px 220px 220px;
+
+    grid-template-areas:
+        "tractor tractor camion"
+        "tractor tractor acoplado"
+        "tolvas  tolvas  vial";
+
+    gap: 18px;
+    margin-top: 35px;
 }
+
+
+/* TARJETA GENERAL */
 
 .categoria {
-    background-color: white;
-    min-height: 180px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: 0.3s;
+    position: relative;
+    min-height: 0;
+    border-radius: 16px;
     overflow: hidden;
+    background-color: #1f3d2b;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
-.categoria:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
+
+/* ENLACE DE LA TARJETA */
 
 .categoria a {
+    position: relative;
+    display: block;
     width: 100%;
     height: 100%;
-    min-height: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    color: #1f3d2b;
+    color: white;
     text-decoration: none;
 }
 
-.icono {
-    font-size: 52px;
+
+/* IMAGEN */
+
+.imagen-categoria {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+
+/* OSCURECIMIENTO DE LA IMAGEN */
+
+.categoria a::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.80) 0%,
+            rgba(0, 0, 0, 0.35) 45%,
+            rgba(0, 0, 0, 0.05) 100%
+        );
+
+    z-index: 1;
+}
+
+
+/* TEXTO */
+
+.categoria a span {
+    position: absolute;
+
+    left: 25px;
+    bottom: 24px;
+
+    z-index: 2;
 }
 
 .categoria a span:last-child {
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
 }
-/* MAQUINAS */
+
+
+/* "EXPLORAR" */
+
+.categoria a::before {
+    content: "EXPLORAR";
+
+    position: absolute;
+
+    left: 25px;
+    bottom: 58px;
+
+    z-index: 2;
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    opacity: 0.85;
+}
+
+
+/* FLECHA */
+
+.categoria a span:last-child::after {
+    content: " →";
+
+    display: inline-block;
+
+    margin-left: 5px;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* =========================
+   DISTRIBUCIÓN DE TARJETAS
+========================= */
+
+/* TRACTORES - GRANDE */
+
+.categoria:nth-child(1) {
+    grid-area: tractor;
+}
+
+
+/* CAMIONES */
+
+.categoria:nth-child(2) {
+    grid-area: camion;
+}
+
+
+/* ACOPLADOS */
+
+.categoria:nth-child(3) {
+    grid-area: acoplado;
+}
+
+
+/* TOLVAS & MIXERS */
+
+.categoria:nth-child(4) {
+    grid-area: tolvas;
+}
+
+
+/* VIAL */
+
+.categoria:nth-child(5) {
+    grid-area: vial;
+}
+
+
+/* =========================
+   TOLVAS & MIXERS
+========================= */
+
+.imagenes-dobles {
+    position: absolute;
+
+    inset: 0;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    z-index: 0;
+}
+
+.imagenes-dobles img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+.imagenes-dobles img:first-child {
+    border-right: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================
+   HOVER DE TARJETAS
+========================= */
+
+.categoria:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 16px 35px rgba(0, 0, 0, 0.16);
+}
+
+.categoria:hover .imagen-categoria {
+    transform: scale(1.06);
+}
+
+.categoria:hover .imagenes-dobles img {
+    transform: scale(1.05);
+}
+
+.categoria:hover a span:last-child::after {
+    transform: translateX(6px);
+}
+
+
+/* =========================
+   MÁQUINAS
+========================= */
 
 .maquinas {
     display: grid;
@@ -262,7 +537,7 @@ nav.encabezado {
     background-color: white;
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .maquina h2 {
@@ -275,7 +550,9 @@ nav.encabezado {
 }
 
 
-/* BUSCAR MAQUINA */
+/* =========================
+   BUSCAR MÁQUINA
+========================= */
 
 .buscar {
     padding: 80px 20px;
@@ -301,7 +578,9 @@ nav.encabezado {
 }
 
 
-/* PIE DE PAGINA */
+/* =========================
+   PIE DE PÁGINA
+========================= */
 
 footer {
     background-color: #104e4c;
@@ -312,8 +591,10 @@ footer {
 .footer-contenido {
     max-width: 1100px;
     margin: auto;
+
     display: flex;
     justify-content: space-between;
+
     gap: 50px;
 }
 
@@ -337,18 +618,159 @@ footer {
     opacity: 0.85;
 }
 
+.footer-contacto a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-contacto a:hover {
+    opacity: 0.7;
+}
+
+.instagram-contacto a {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    color: white;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.instagram-contacto a:hover {
+    opacity: 0.7;
+}
+
+.instagram-contacto img {
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+}
+
+.instagram-icono {
+    font-size: 22px;
+    line-height: 1;
+}
+
 .footer-final {
     max-width: 1100px;
     margin: 40px auto 0;
+
     padding-top: 20px;
-    border-top: 1px solid rgba(255,255,255,0.15);
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.15);
+
     text-align: center;
+
     font-size: 14px;
+
     opacity: 0.65;
 }
 
 
-/* CELULAR */
+/* =========================
+   MENÚ LATERAL
+========================= */
+
+.menu-lateral {
+    position: fixed;
+
+    top: 0;
+    left: -280px;
+
+    width: 280px;
+    height: 100vh;
+
+    background-color: white;
+
+    padding: 90px 30px 30px;
+
+    box-shadow:
+        4px 0 15px rgba(0, 0, 0, 0.15);
+
+    transition: left 0.3s ease;
+
+    z-index: 100;
+}
+
+.menu-lateral a {
+    display: block;
+
+    color: #1f3d2b;
+
+    text-decoration: none;
+
+    font-size: 19px;
+    font-weight: 600;
+
+    padding: 16px 10px;
+
+    border-radius: 6px;
+
+    transition: 0.2s ease;
+}
+
+.menu-lateral a:hover {
+    background-color: #f1f3f1;
+    padding-left: 16px;
+}
+
+.cerrar-menu {
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    background: none;
+    border: none;
+
+    font-size: 28px;
+
+    color: #1f3d2b;
+
+    cursor: pointer;
+}
+
+.fondo-menu {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s ease;
+
+    z-index: 90;
+}
+
+
+/* =========================
+   LOGO PORTADA
+========================= */
+
+.logo-portada {
+    width: 500px;
+    height: auto;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
 
 @media (max-width: 768px) {
 
@@ -362,6 +784,9 @@ footer {
         justify-content: center;
         gap: 15px;
     }
+
+
+    /* PORTADA */
 
     .portada {
         min-height: 450px;
@@ -388,13 +813,118 @@ footer {
         padding: 14px 22px;
     }
 
+
+    /* MAQUINARIA */
+
     .categorias {
+        display: grid;
+
         grid-template-columns: 1fr;
+
+        grid-template-rows:
+            230px
+            230px
+            230px
+            230px
+            230px;
+
+        grid-template-areas:
+            "tractor"
+            "camion"
+            "acoplado"
+            "tolvas"
+            "vial";
+
+        gap: 15px;
     }
+
+    .categoria:nth-child(1),
+    .categoria:nth-child(2),
+    .categoria:nth-child(3),
+    .categoria:nth-child(4),
+    .categoria:nth-child(5) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .categoria a span:last-child {
+        font-size: 22px;
+    }
+
+    .categoria a span {
+        left: 20px;
+        bottom: 20px;
+    }
+
+    .categoria a::before {
+        left: 20px;
+        bottom: 51px;
+    }
+
+
+    /* MÁQUINAS */
 
     .maquinas {
         grid-template-columns: 1fr;
     }
+
+
+    /* SOBRE NOSOTROS */
+
+    .nosotros {
+        padding: 45px 15px 55px;
+    }
+
+    .nosotros-contenido {
+        width: 100%;
+    }
+
+    .nosotros-encabezado {
+        margin-bottom: 20px;
+    }
+
+    .nosotros-kicker {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .nosotros-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .nosotros-video {
+        width: 100%;
+        max-width: none;
+        border-radius: 10px;
+    }
+
+    .nosotros-video video {
+        width: 100%;
+        height: 220px;
+        display: block;
+        object-fit: fill;
+    }
+
+    .nosotros-texto {
+        width: 100%;
+    }
+
+    .nosotros-texto h2 {
+        font-size: 25px;
+        line-height: 1.2;
+        margin: 0 0 15px;
+    }
+
+    .nosotros-texto p {
+        font-size: 15px;
+        line-height: 1.6;
+        margin: 0 0 12px;
+    }
+
+
+    /* FOOTER */
 
     .footer-contenido {
         flex-direction: column;
@@ -402,104 +932,3 @@ footer {
     }
 }
 
-.logo-portada {
-    width: 500px;
-    height: auto;
-    margin-bottom: 20px;
-}.imagen-categoria {
-    width: 100%;
-    max-width: 100%;
-    height: 180px;            
-    object-fit: cover;        
-    display: block;
-    border-radius: 12px 12px 0 0; 
-}
-.footer-contacto a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.footer-contacto a:hover {
-    opacity: 0.7;
-}
-.instagram-contacto a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.instagram-contacto a:hover {
-    opacity: 0.7;
-}
-
-.instagram-icono {
-    font-size: 22px;
-    line-height: 1;
-}
-.instagram-contacto a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: white;
-    text-decoration: none;
-}
-
-.instagram-contacto img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-}
-.menu-lateral {
-    position: fixed;
-    top: 0;
-    left: -280px;
-    width: 280px;
-    height: 100vh;
-    background-color: white;
-    padding: 90px 30px 30px;
-    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
-    transition: left 0.3s ease;
-    z-index: 100;
-}
-
-.menu-lateral a {
-    display: block;
-    color: #1f3d2b;
-    text-decoration: none;
-    font-size: 19px;
-    font-weight: 600;
-    padding: 16px 10px;
-    border-radius: 6px;
-    transition: 0.2s ease;
-}
-.fondo-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.35);
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s ease;
-    z-index: 90;
-}
-
-.menu-lateral a:hover {
-    background-color: #f1f3f1;
-    padding-left: 16px;
-}
-.cerrar-menu {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 28px;
-    color: #1f3d2b;
-    cursor: pointer;
-}
