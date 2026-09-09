@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,12 +15,40 @@
     <header>
         <nav class="encabezado">
 
+            <!-- MENÚ HAMBURGUESA -->
             <button class="boton-menu" onclick="abrirMenu()" aria-label="Abrir menú">
                 ☰
             </button>
 
+
+            <!-- LOGO -->
+            <a href="index.html" class="logo-encabezado">
+                <img src="Imagenes/portada.png" alt="Maquinarias Troya">
+            </a>
+
+
+            <!-- NAVEGACIÓN PC -->
+            <div class="menu-desktop">
+
+                <a href="index.html">Inicio</a>
+                <a href="index.html#nosotros">Sobre nosotros</a>
+                <a href="index.html#maquinaria">Maquinaria</a>
+                <a href="index.html#contacto">Contacto</a>
+                <button class="boton-busqueda" aria-label="Buscar">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="10.5" cy="10.5" r="6.5"></circle>
+        <line x1="15.5" y1="15.5" x2="21" y2="21"></line>
+    </svg>
+</button>
+
+            </div>
+
+
+            <!-- FONDO DEL MENÚ -->
             <div class="fondo-menu" onclick="cerrarMenu()"></div>
 
+
+            <!-- MENÚ LATERAL CELULAR -->
             <div class="menu-lateral">
 
                 <button class="cerrar-menu" onclick="cerrarMenu()">✕</button>
@@ -30,10 +59,6 @@
                 <a href="index.html#contacto" onclick="cerrarMenu()">Contacto</a>
 
             </div>
-
-            <a href="index.html" class="logo-encabezado">
-                <img src="Imagenes/portada.png" alt="Maquinarias Troya">
-            </a>
 
         </nav>
     </header>
@@ -58,6 +83,60 @@
     </section>
 
 
+    <!-- BARRA DE CONFIANZA -->
+
+    <section class="confianza">
+
+        <div class="confianza-item">
+
+            <span class="confianza-icono">✓</span>
+
+            <div>
+                <strong>Compra y venta</strong>
+                <p>Maquinaria seleccionada</p>
+            </div>
+
+        </div>
+
+
+        <div class="confianza-item">
+
+            <span class="confianza-icono">⚙</span>
+
+            <div>
+                <strong>Reparación</strong>
+                <p>Servicio especializado</p>
+            </div>
+
+        </div>
+
+
+        <div class="confianza-item">
+
+            <span class="confianza-icono">▣</span>
+
+            <div>
+                <strong>Maquinaria</strong>
+                <p>Agrícola, vial y camiones</p>
+            </div>
+
+        </div>
+
+
+        <div class="confianza-item">
+
+            <span class="confianza-icono">→</span>
+
+            <div>
+                <strong>Atención directa</strong>
+                <p>Consultanos por tu máquina</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
     <!-- SOBRE NOSOTROS -->
 
     <section class="nosotros" id="nosotros">
@@ -65,8 +144,13 @@
         <div class="nosotros-contenido">
 
             <div class="nosotros-encabezado">
-                <span class="nosotros-kicker">SOBRE NOSOTROS</span>
+
+                <span class="nosotros-kicker">
+                    SOBRE NOSOTROS
+                </span>
+
             </div>
+
 
             <div class="nosotros-grid">
 
@@ -74,7 +158,10 @@
 
                     <video autoplay muted loop playsinline>
 
-                        <source src="Videos/video sobre nosotros.mp4" type="video/mp4">
+                        <source
+                            src="Videos/video sobre nosotros.mp4"
+                            type="video/mp4"
+                        >
 
                         Tu navegador no soporta videos.
 
@@ -113,11 +200,25 @@
 
     <section class="contenido" id="maquinaria">
 
-        <h2>Maquinaria</h2>
+        <div class="maquinaria-encabezado">
 
-        <p class="descripcion-maquinaria">
-            Maquinaria agrícola, vial y camiones para cada necesidad
-        </p>
+            <div class="maquinaria-titulos">
+
+                <span class="maquinaria-kicker">
+                    NUESTRO CATÁLOGO
+                </span>
+
+                <h2>
+                    Encontrá la máquina que necesitás
+                </h2>
+
+                <p class="descripcion-maquinaria">
+                    Maquinaria agrícola, vial y camiones para cada necesidad.
+                </p>
+
+            </div>
+
+        </div>
 
 
         <div class="categorias">
@@ -231,7 +332,7 @@
     </section>
 
 
-    <!-- BUSCO UNA MÁQUINA -->
+    <!-- BUSCÁS UNA MÁQUINA -->
 
     <section class="buscar" id="buscar">
 
@@ -292,6 +393,7 @@
                     <a
                         href="https://www.instagram.com/maquinariastroya/"
                         target="_blank"
+                        rel="noopener noreferrer"
                     >
 
                         <img
