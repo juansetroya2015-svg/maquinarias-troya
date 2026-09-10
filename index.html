@@ -1,81 +1,155 @@
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maquinarias Troya</title>
+
+    <title>Maquinarias Troya | Maquinaria agrícola, vial y camiones</title>
+
+    <meta
+        name="description"
+        content="Maquinarias Troya. Compra, venta y reparación de maquinaria agrícola, vial y camiones."
+    >
+
     <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
 
-    <!-- ENCABEZADO -->
+    <!-- =========================
+         HEADER
+    ========================== -->
+
     <header>
+
         <nav class="encabezado">
 
-            <!-- MENÚ HAMBURGUESA -->
-            <button class="boton-menu" onclick="abrirMenu()" aria-label="Abrir menú">
+            <button
+                class="boton-menu"
+                onclick="abrirMenu()"
+                aria-label="Abrir menú"
+            >
                 ☰
             </button>
 
-
-            <!-- LOGO -->
             <a href="index.html" class="logo-encabezado">
-                <img src="Imagenes/portada.png" alt="Maquinarias Troya">
+                <img
+                    src="Imagenes/portada.png"
+                    alt="Maquinarias Troya"
+                >
             </a>
 
-
-            <!-- NAVEGACIÓN PC -->
             <div class="menu-desktop">
 
-                <a href="index.html">Inicio</a>
-                <a href="index.html#nosotros">Sobre nosotros</a>
-                <a href="index.html#maquinaria">Maquinaria</a>
-                <a href="index.html#contacto">Contacto</a>
-                <button class="boton-busqueda" aria-label="Buscar">
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="10.5" cy="10.5" r="6.5"></circle>
-        <line x1="15.5" y1="15.5" x2="21" y2="21"></line>
-    </svg>
-</button>
+                <a href="index.html" class="activo">
+                    Inicio
+                </a>
+
+                <a href="#nosotros">
+                    Sobre nosotros
+                </a>
+
+                <a href="#maquinaria">
+                    Maquinaria
+                </a>
+
+                <a href="#contacto">
+                    Contacto
+                </a>
+
+                <!-- BUSCADOR -->
+
+                <button
+                    class="boton-busqueda"
+                    onclick="abrirBuscador()"
+                    aria-label="Buscar"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="10.5" cy="10.5" r="6.5"></circle>
+                        <line x1="15.5" y1="15.5" x2="21" y2="21"></line>
+                    </svg>
+                </button>
+
+                <div class="buscador" id="buscador">
+
+                    <input
+                        type="text"
+                        id="campoBusqueda"
+                        placeholder="¿Qué máquina buscás?"
+                        autocomplete="off"
+                    >
+
+                </div>
 
             </div>
 
 
-            <!-- FONDO DEL MENÚ -->
-            <div class="fondo-menu" onclick="cerrarMenu()"></div>
+            <!-- MENÚ LATERAL -->
 
+            <div
+                class="fondo-menu"
+                onclick="cerrarMenu()"
+            ></div>
 
-            <!-- MENÚ LATERAL CELULAR -->
             <div class="menu-lateral">
 
-                <button class="cerrar-menu" onclick="cerrarMenu()">✕</button>
+                <button
+                    class="cerrar-menu"
+                    onclick="cerrarMenu()"
+                >
+                    ✕
+                </button>
 
-                <a href="index.html" onclick="cerrarMenu()">Inicio</a>
-                <a href="index.html#nosotros" onclick="cerrarMenu()">Sobre nosotros</a>
-                <a href="index.html#maquinaria" onclick="cerrarMenu()">Maquinaria</a>
-                <a href="index.html#contacto" onclick="cerrarMenu()">Contacto</a>
+                <a href="index.html" onclick="cerrarMenu()">
+                    Inicio
+                </a>
+
+                <a href="#nosotros" onclick="cerrarMenu()">
+                    Sobre nosotros
+                </a>
+
+                <a href="#maquinaria" onclick="cerrarMenu()">
+                    Maquinaria
+                </a>
+
+                <a href="#contacto" onclick="cerrarMenu()">
+                    Contacto
+                </a>
 
             </div>
 
         </nav>
+
     </header>
 
 
-    <!-- PORTADA -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
     <section class="portada">
 
         <div class="portada-contenido">
 
-            <h1>Maquinaria agrícola, vial y camiones</h1>
+            <span class="portada-kicker">
+                MAQUINARIAS TROYA
+            </span>
 
-            <p>Compra, venta y reparación</p>
+            <h1>
+                Maquinaria agrícola,<br>
+                vial y transporte.
+            </h1>
 
-            <a href="https://wa.me/5492392407678" class="boton-whatsapp">
-                Consultar por WhatsApp
+            <p>
+                Compra · Venta · Reparación
+            </p>
+
+            <a
+                href="#maquinaria"
+                class="boton-principal"
+            >
+                Ver maquinaria
+                <span>→</span>
             </a>
 
         </div>
@@ -83,150 +157,137 @@
     </section>
 
 
-    <!-- BARRA DE CONFIANZA -->
+    <!-- =========================
+         BARRA DE CONFIANZA
+    ========================== -->
 
-    <section class="confianza">
+   
+<section class="confianza">
 
-        <div class="confianza-item">
+    <!-- 1 -->
+    <div class="confianza-item">
 
-            <span class="confianza-icono">✓</span>
+        <div class="confianza-icono">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M8 12.5l2.5 2.5L16 9.5"></path>
+            </svg>
+        </div>
+
+        <div>
+            <strong>Maquinaria seleccionada</strong>
+            <p>Equipos para cada necesidad</p>
+        </div>
+
+    </div>
+
+
+    <!-- 2 -->
+    <div class="confianza-item">
+
+        <div class="confianza-icono">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"></path>
+        <path d="M19.4 13.5a7.6 7.6 0 0 0 0-3l1.5-1.1-1.8-3.1-1.7.8a7.5 7.5 0 0 0-2.6-1.5L14.6 4h-3.5l-.2 1.6a7.5 7.5 0 0 0-2.6 1.5l-1.7-.8-1.8 3.1 1.5 1.1a7.6 7.6 0 0 0 0 3l-1.5 1.1 1.8 3.1 1.7-.8a7.5 7.5 0 0 0 2.6 1.5l.2 1.6h3.5l.2-1.6a7.5 7.5 0 0 0 2.6-1.5l1.7.8 1.8-3.1-1.5-1.1z"></path>
+    </svg>
+</div>
+
+        <div>
+            <strong>Servicio y mantenimiento</strong>
+            <p>Atención y asesoramiento</p>
+        </div>
+
+    </div>
+
+
+    <!-- 3 -->
+    <div class="confianza-item">
+
+        <div class="confianza-icono">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 7h11v9H3z"></path>
+                <path d="M14 10h4l3 3v3h-7z"></path>
+                <circle cx="7" cy="18" r="2"></circle>
+                <circle cx="18" cy="18" r="2"></circle>
+            </svg>
+        </div>
+
+        <div>
+            <strong>Envíos a todo el país</strong>
+            <p>Coordinamos cada traslado</p>
+        </div>
+
+    </div>
+
+
+    <!-- 4 -->
+    <div class="confianza-item">
+
+        <div class="confianza-icono">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 21s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"></path>
+                <circle cx="12" cy="9" r="2.5"></circle>
+            </svg>
+        </div>
+
+        <div>
+            <strong>30 de Agosto, Buenos Aires</strong>
+            <p>Atención personalizada</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    <!-- =========================
+         MAQUINARIA
+    ========================== -->
+
+    <section
+        class="contenido animar-derecha"
+        id="maquinaria"
+    >
+
+        <div class="seccion-encabezado">
 
             <div>
-                <strong>Compra y venta</strong>
-                <p>Maquinaria seleccionada</p>
-            </div>
 
-        </div>
-
-
-        <div class="confianza-item">
-
-            <span class="confianza-icono">⚙</span>
-
-            <div>
-                <strong>Reparación</strong>
-                <p>Servicio especializado</p>
-            </div>
-
-        </div>
-
-
-        <div class="confianza-item">
-
-            <span class="confianza-icono">▣</span>
-
-            <div>
-                <strong>Maquinaria</strong>
-                <p>Agrícola, vial y camiones</p>
-            </div>
-
-        </div>
-
-
-        <div class="confianza-item">
-
-            <span class="confianza-icono">→</span>
-
-            <div>
-                <strong>Atención directa</strong>
-                <p>Consultanos por tu máquina</p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SOBRE NOSOTROS -->
-
-    <section class="nosotros" id="nosotros">
-
-        <div class="nosotros-contenido">
-
-            <div class="nosotros-encabezado">
-
-                <span class="nosotros-kicker">
-                    SOBRE NOSOTROS
-                </span>
-
-            </div>
-
-
-            <div class="nosotros-grid">
-
-                <div class="nosotros-video">
-
-                    <video autoplay muted loop playsinline>
-
-                        <source
-                            src="Videos/video sobre nosotros.mp4"
-                            type="video/mp4"
-                        >
-
-                        Tu navegador no soporta videos.
-
-                    </video>
-
-                </div>
-
-
-                <div class="nosotros-texto">
-
-                    <h2>
-                        Trayectoria, infraestructura y tecnología al servicio del campo.
-                    </h2>
-
-                    <p>
-                        En Troya Maquinarias nos dedicamos a la compra, venta y reparación
-                        de maquinaria agrícola, vial y camiones, brindando soluciones
-                        pensadas para las necesidades de cada cliente.
-                    </p>
-
-                    <p>
-                        Contamos con experiencia, infraestructura y un equipo preparado
-                        para acompañarte en cada operación.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- MAQUINARIA -->
-
-    <section class="contenido" id="maquinaria">
-
-        <div class="maquinaria-encabezado">
-
-            <div class="maquinaria-titulos">
-
-                <span class="maquinaria-kicker">
-                    NUESTRO CATÁLOGO
+                <span class="seccion-kicker">
+                    NUESTRA MAQUINARIA
                 </span>
 
                 <h2>
                     Encontrá la máquina que necesitás
                 </h2>
 
-                <p class="descripcion-maquinaria">
-                    Maquinaria agrícola, vial y camiones para cada necesidad.
+                <p>
+                    Maquinaria agrícola, vial y camiones
+                    para cada necesidad.
                 </p>
 
             </div>
 
+            <a
+                href="#maquinaria"
+                class="link-catalogo"
+            >
+                Ver catálogo
+                <span>→</span>
+            </a>
+
         </div>
 
+
+        <!-- CATEGORÍAS -->
 
         <div class="categorias">
 
 
             <!-- TRACTORES -->
 
-            <div class="categoria">
+            <div class="categoria categoria-grande">
 
                 <a href="tractores.html">
 
@@ -236,7 +297,20 @@
                         class="imagen-categoria"
                     >
 
-                    <span>Tractores</span>
+                    <div class="categoria-overlay"></div>
+
+                    <div class="categoria-info">
+
+                        <span class="categoria-kicker">
+                            EXPLORAR
+                        </span>
+
+                        <div class="categoria-nombre">
+                            Tractores
+                            <span>→</span>
+                        </div>
+
+                    </div>
 
                 </a>
 
@@ -255,7 +329,20 @@
                         class="imagen-categoria"
                     >
 
-                    <span>Camiones</span>
+                    <div class="categoria-overlay"></div>
+
+                    <div class="categoria-info">
+
+                        <span class="categoria-kicker">
+                            EXPLORAR
+                        </span>
+
+                        <div class="categoria-nombre">
+                            Camiones
+                            <span>→</span>
+                        </div>
+
+                    </div>
 
                 </a>
 
@@ -274,7 +361,20 @@
                         class="imagen-categoria"
                     >
 
-                    <span>Acoplados</span>
+                    <div class="categoria-overlay"></div>
+
+                    <div class="categoria-info">
+
+                        <span class="categoria-kicker">
+                            EXPLORAR
+                        </span>
+
+                        <div class="categoria-nombre">
+                            Acoplados
+                            <span>→</span>
+                        </div>
+
+                    </div>
 
                 </a>
 
@@ -301,7 +401,20 @@
 
                     </div>
 
-                    <span>Tolvas & Mixers</span>
+                    <div class="categoria-overlay"></div>
+
+                    <div class="categoria-info">
+
+                        <span class="categoria-kicker">
+                            EXPLORAR
+                        </span>
+
+                        <div class="categoria-nombre">
+                            Tolvas & Mixers
+                            <span>→</span>
+                        </div>
+
+                    </div>
 
                 </a>
 
@@ -320,35 +433,416 @@
                         class="imagen-categoria"
                     >
 
-                    <span>Vial</span>
+                    <div class="categoria-overlay"></div>
+
+                    <div class="categoria-info">
+
+                        <span class="categoria-kicker">
+                            EXPLORAR
+                        </span>
+
+                        <div class="categoria-nombre">
+                            Vial
+                            <span>→</span>
+                        </div>
+
+                    </div>
 
                 </a>
 
             </div>
-
 
         </div>
 
     </section>
 
 
-    <!-- BUSCÁS UNA MÁQUINA -->
+    <!-- =========================
+         MÁQUINAS DESTACADAS
+    ========================== -->
 
-    <section class="buscar" id="buscar">
+    <section class="destacadas animar-scroll">
 
-        <div class="buscar-contenido">
+        <div class="contenido">
 
-            <h2>¿Buscás una máquina?</h2>
+            <div class="seccion-encabezado">
 
-            <p>
-                Decinos qué máquina necesitás y te ayudamos a encontrarla.
-            </p>
+                <div>
+
+                    <span class="seccion-kicker">
+                        MÁQUINAS DESTACADAS
+                    </span>
+
+                    <h2>
+                        Las mejores oportunidades
+                    </h2>
+
+                </div>
+
+                <a
+                    href="#maquinaria"
+                    class="link-catalogo"
+                >
+                    Ver todo el catálogo
+                    <span>→</span>
+                </a>
+
+            </div>
+
+
+            <div class="productos">
+
+
+                <!-- PRODUCTO 1 -->
+
+                <article class="producto">
+
+                    <div class="producto-imagen">
+
+                        <img
+                            src="Imagenes/tractor icono.avif"
+                            alt="Tractor"
+                        >
+
+                        <span class="producto-categoria">
+                            TRACTORES
+                        </span>
+
+                    </div>
+
+                    <div class="producto-info">
+
+                        <h3>
+                            Tractor
+                        </h3>
+
+                        <p class="producto-detalle">
+                            Consultar disponibilidad
+                        </p>
+
+                        <a
+                            href="https://wa.me/5492392407678"
+                            class="boton-consultar"
+                        >
+                            <span>◉</span>
+                            Consultar
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCTO 2 -->
+
+                <article class="producto">
+
+                    <div class="producto-imagen">
+
+                        <img
+                            src="Imagenes/camion icono.jpg"
+                            alt="Camión"
+                        >
+
+                        <span class="producto-categoria azul">
+                            CAMIONES
+                        </span>
+
+                    </div>
+
+                    <div class="producto-info">
+
+                        <h3>
+                            Camión
+                        </h3>
+
+                        <p class="producto-detalle">
+                            Consultar disponibilidad
+                        </p>
+
+                        <a
+                            href="https://wa.me/5492392407678"
+                            class="boton-consultar"
+                        >
+                            <span>◉</span>
+                            Consultar
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCTO 3 -->
+
+                <article class="producto">
+
+                    <div class="producto-imagen">
+
+                        <img
+                            src="Imagenes/acoplado icono.jpg"
+                            alt="Acoplado"
+                        >
+
+                        <span class="producto-categoria naranja">
+                            ACOPLADOS
+                        </span>
+
+                    </div>
+
+                    <div class="producto-info">
+
+                        <h3>
+                            Acoplado
+                        </h3>
+
+                        <p class="producto-detalle">
+                            Consultar disponibilidad
+                        </p>
+
+                        <a
+                            href="https://wa.me/5492392407678"
+                            class="boton-consultar"
+                        >
+                            <span>◉</span>
+                            Consultar
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCTO 4 -->
+
+                <article class="producto">
+
+                    <div class="producto-imagen">
+
+                        <img
+                            src="Imagenes/tolva icono.jpg"
+                            alt="Tolva"
+                        >
+
+                        <span class="producto-categoria violeta">
+                            TOLVAS & MIXERS
+                        </span>
+
+                    </div>
+
+                    <div class="producto-info">
+
+                        <h3>
+                            Tolva
+                        </h3>
+
+                        <p class="producto-detalle">
+                            Consultar disponibilidad
+                        </p>
+
+                        <a
+                            href="https://wa.me/5492392407678"
+                            class="boton-consultar"
+                        >
+                            <span>◉</span>
+                            Consultar
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCTO 5 -->
+
+                <article class="producto">
+
+                    <div class="producto-imagen">
+
+                        <img
+                            src="Imagenes/retroexcavadora icono.jpg"
+                            alt="Maquinaria vial"
+                        >
+
+                        <span class="producto-categoria amarillo">
+                            VIAL
+                        </span>
+
+                    </div>
+
+                    <div class="producto-info">
+
+                        <h3>
+                            Maquinaria vial
+                        </h3>
+
+                        <p class="producto-detalle">
+                            Consultar disponibilidad
+                        </p>
+
+                        <a
+                            href="https://wa.me/5492392407678"
+                            class="boton-consultar"
+                        >
+                            <span>◉</span>
+                            Consultar
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         COMPRA / PARTE DE PAGO
+    ========================== -->
+
+    <section class="vender">
+
+        <div class="vender-contenido">
+
+            <div class="vender-icono">
+                ⇄
+            </div>
+
+            <div class="vender-texto">
+
+                <span>
+                    ¿TENÉS UNA MÁQUINA PARA VENDER?
+                </span>
+
+                <h2>
+                    Compramos maquinaria y tomamos
+                    unidades usadas como parte de pago.
+                </h2>
+
+                <a
+                    href="https://wa.me/5492392407678"
+                    class="boton-amarillo"
+                >
+                    Hablar con Troya
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SOBRE NOSOTROS
+    ========================== -->
+
+    <section
+        class="nosotros"
+        id="nosotros"
+    >
+
+        <div class="nosotros-contenido">
+
+            <div class="nosotros-video animar-izquierda">
+
+                <video
+                    src="Videos/video sobre nosotros.mp4"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                ></video>
+
+            </div>
+
+
+            <div class="nosotros-texto animar-texto-derecha">
+
+                <span class="seccion-kicker">
+                    SOBRE NOSOTROS
+                </span>
+
+                <h2>
+                    Experiencia que se mueve
+                    con el campo.
+                </h2>
+
+                <p>
+                    En Maquinarias Troya nos dedicamos a la
+                    compra, venta y reparación de maquinaria
+                    agrícola, vial y de transporte.
+                </p>
+
+                <p>
+                    Con años de experiencia en el rubro,
+                    ofrecemos soluciones confiables y un
+                    servicio personalizado para que tu trabajo
+                    no se detenga.
+                </p>
+
+
+                <div class="nosotros-datos">
+
+                    <div>
+                        <strong>30 de Agosto</strong>
+                        <span>Nuestra ubicación</span>
+                    </div>
+
+                    <div>
+                        <strong>Compra</strong>
+                        <span>Venta y reparación</span>
+                    </div>
+
+                    <div>
+                        <strong>Servicio</strong>
+                        <span>Atención personalizada</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section class="cta">
+
+        <div class="cta-contenido">
+
+            <div class="cta-icono">
+                ☎
+            </div>
+
+            <div>
+
+                <h2>
+                    ¿Buscás una máquina?
+                </h2>
+
+                <p>
+                    Decinos qué necesitás.
+                    Nosotros te ayudamos a encontrarla.
+                </p>
+
+            </div>
 
             <a
                 href="https://wa.me/5492392407678"
-                class="boton-whatsapp"
+                class="boton-amarillo"
             >
                 Consultar por WhatsApp
+                <span>→</span>
             </a>
 
         </div>
@@ -356,100 +850,256 @@
     </section>
 
 
-    <!-- CONTACTO -->
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer id="contacto">
 
         <div class="footer-contenido">
 
+            <div class="footer-marca">
 
-            <div class="footer-info">
-
-                <h2>TROYA MAQUINARIAS</h2>
+                <img
+                    src="Imagenes/portada.png"
+                    alt="Troya Maquinarias"
+                >
 
                 <p>
-                    Compra, venta y reparación de maquinaria agrícola,
-                    vial y camiones.
+                    Compra, venta y reparación de
+                    maquinaria agrícola, vial y camiones.
                 </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="#nosotros">
+                    Sobre nosotros
+                </a>
+
+                <a href="#maquinaria">
+                    Maquinaria
+                </a>
+
+                <a href="#contacto">
+                    Contacto
+                </a>
 
             </div>
 
 
             <div class="footer-contacto">
 
-                <h3>Contacto</h3>
-
                 <p>
-                    📍 30 de Agosto, Buenos Aires, Argentina
+                    📍 30 de Agosto, Buenos Aires
                 </p>
 
                 <p>
-                    📱 2392 407678
+                    📞 02392 407678
                 </p>
 
-
-                <p class="instagram-contacto">
-
-                    <a
-                        href="https://www.instagram.com/maquinariastroya/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-
-                        <img
-                            src="Imagenes/instagram logo.png"
-                            alt="Instagram"
-                        >
-
-                        @maquinariastroya
-
-                    </a>
-
-                </p>
+                <a
+                    href="https://www.instagram.com/maquinariastroya/"
+                    target="_blank"
+                >
+                    Instagram
+                </a>
 
             </div>
 
         </div>
 
 
-        <div class="footer-final">
+        <div class="footer-bottom">
 
-            <p>
-                © 2026 Maquinarias Troya
-            </p>
+            <span>
+                © 2026 Maquinarias Troya.
+                Todos los derechos reservados.
+            </span>
+
+            <span>
+                Maquinaria agrícola, vial y transporte.
+            </span>
 
         </div>
 
     </footer>
 
 
-    <!-- JAVASCRIPT DEL MENÚ -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
 
     <script>
 
-        function abrirMenu() {
+    /* =================================
+       MENÚ
+    ================================= */
 
-            document.querySelector(".menu-lateral").style.left = "0";
+    function abrirMenu() {
+        document.body.classList.add("menu-abierto");
+    }
 
-            document.querySelector(".fondo-menu").style.opacity = "1";
+    function cerrarMenu() {
+        document.body.classList.remove("menu-abierto");
+    }
 
-            document.querySelector(".fondo-menu").style.visibility = "visible";
 
+    /* =================================
+       BUSCADOR
+    ================================= */
+
+    function abrirBuscador() {
+
+        const buscador = document.getElementById("buscador");
+        const campo = document.getElementById("campoBusqueda");
+
+        buscador.classList.toggle("abierto");
+
+        if (buscador.classList.contains("abierto")) {
+            campo.focus();
         }
 
+    }
 
-        function cerrarMenu() {
 
-            document.querySelector(".menu-lateral").style.left = "-280px";
+    /* =================================
+       BÚSQUEDA DIRECTA
+    ================================= */
 
-            document.querySelector(".fondo-menu").style.opacity = "0";
+    document
+        .getElementById("campoBusqueda")
+        .addEventListener("keydown", function(evento) {
 
-            document.querySelector(".fondo-menu").style.visibility = "hidden";
+            if (evento.key !== "Enter") {
+                return;
+            }
 
+            const busqueda = this.value
+                .toLowerCase()
+                .trim();
+
+
+            /* TRACTORES */
+
+            if (
+                busqueda === "tractor" ||
+                busqueda === "tractores"
+            ) {
+
+                window.location.href = "tractores.html";
+
+                return;
+            }
+
+
+            /* CAMIONES */
+
+            if (
+                busqueda === "camion" ||
+                busqueda === "camiones" ||
+                busqueda === "camión"
+            ) {
+
+                window.location.href = "camiones.html";
+
+                return;
+            }
+
+
+            /* ACOPLADOS */
+
+            if (
+                busqueda === "acoplado" ||
+                busqueda === "acoplados"
+            ) {
+
+                window.location.href = "acoplados.html";
+
+                return;
+            }
+
+
+            /* TOLVAS Y MIXERS */
+
+            if (
+                busqueda === "tolva" ||
+                busqueda === "tolvas" ||
+                busqueda === "mixer" ||
+                busqueda === "mixers"
+            ) {
+
+                window.location.href = "tolvas-mixers.html";
+
+                return;
+            }
+
+
+            /* MAQUINARIA VIAL */
+
+            if (
+                busqueda === "vial" ||
+                busqueda === "excavadora" ||
+                busqueda === "excavadoras" ||
+                busqueda === "motoniveladora" ||
+                busqueda === "motoniveladoras" ||
+                busqueda === "autoelevador" ||
+                busqueda === "autoelevadores" ||
+                busqueda === "minicargadora" ||
+                busqueda === "minicargadoras" ||
+                busqueda === "pala cargadora" ||
+                busqueda === "terminadora de asfalto"
+            ) {
+
+                window.location.href = "vial.html";
+
+                return;
+            }
+
+        });
+
+
+    /* =================================
+       ANIMACIONES AL HACER SCROLL
+    ================================= */
+
+    const elementosAnimados = document.querySelectorAll(
+        ".animar-scroll, .animar-derecha, .animar-izquierda, .animar-texto-derecha"
+    );
+
+    const observador = new IntersectionObserver(
+        (entradas) => {
+
+            entradas.forEach((entrada) => {
+
+                if (entrada.isIntersecting) {
+
+                    entrada.target.classList.add("visible");
+
+                    observador.unobserve(entrada.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
         }
+    );
+
+
+    elementosAnimados.forEach((elemento) => {
+        observador.observe(elemento);
+    });
 
     </script>
 
 </body>
-
 </html>
