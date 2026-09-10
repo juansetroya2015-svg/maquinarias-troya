@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tolvas y Mixers | Maquinarias Troya</title>
+
+    <meta
+        name="description"
+        content="Tolvas y mixers agrícolas de Maquinarias Troya."
+    >
+
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <nav class="encabezado">
+
+            <button
+                class="boton-menu"
+                onclick="abrirMenu()"
+                aria-label="Abrir menú"
+            >
+                ☰
+            </button>
+
+            <a href="index.html" class="logo-encabezado">
+
+                <img
+                    src="Imagenes/portada.png"
+                    alt="Maquinarias Troya"
+                >
+
+            </a>
+
+
+            <div class="menu-desktop">
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="index.html#nosotros">
+                    Sobre nosotros
+                </a>
+
+                <a href="index.html#maquinaria" class="activo">
+                    Maquinaria
+                </a>
+
+                <a href="index.html#contacto">
+                    Contacto
+                </a>
+
+                <button
+                    class="boton-busqueda"
+                    aria-label="Buscar"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                    >
+
+                        <circle
+                            cx="10.5"
+                            cy="10.5"
+                            r="6.5"
+                        ></circle>
+
+                        <line
+                            x1="15.5"
+                            y1="15.5"
+                            x2="21"
+                            y2="21"
+                        ></line>
+
+                    </svg>
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="fondo-menu"
+                onclick="cerrarMenu()"
+            ></div>
+
+
+            <div class="menu-lateral">
+
+                <button
+                    class="cerrar-menu"
+                    onclick="cerrarMenu()"
+                >
+                    ✕
+                </button>
+
+                <a
+                    href="index.html"
+                    onclick="cerrarMenu()"
+                >
+                    Inicio
+                </a>
+
+                <a
+                    href="index.html#nosotros"
+                    onclick="cerrarMenu()"
+                >
+                    Sobre nosotros
+                </a>
+
+                <a
+                    href="index.html#maquinaria"
+                    onclick="cerrarMenu()"
+                >
+                    Maquinaria
+                </a>
+
+                <a
+                    href="index.html#contacto"
+                    onclick="cerrarMenu()"
+                >
+                    Contacto
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         PORTADA
+    ========================== -->
+
+    <section class="categoria-portada">
+
+        <div class="categoria-portada-contenido">
+
+            <span class="portada-kicker">
+                MAQUINARIAS TROYA
+            </span>
+
+            <h1>
+                Tolvas y Mixers
+            </h1>
+
+            <p>
+                Maquinaria agrícola para cada necesidad.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CATÁLOGO
+    ========================== -->
+
+    <section class="catalogo-maquinas">
+
+        <div class="contenido">
+
+            <div class="seccion-encabezado">
+
+                <div>
+
+                    <span class="seccion-kicker">
+                        CATÁLOGO
+                    </span>
+
+                    <h2>
+                        Tolvas y Mixers
+                    </h2>
+
+                    <p>
+                        Explorá nuestra maquinaria disponible
+                        y encontrá la opción que necesitás.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 CATÁLOGO + FILTROS
+            ========================== -->
+
+            <div class="catalogo-con-filtros">
+
+
+                <!-- =========================
+                     FILTRO LATERAL
+                ========================== -->
+
+                <aside class="filtros-sidebar">
+
+                    <div class="filtros-header">
+
+                        <span class="filtros-kicker">
+                            CATÁLOGO
+                        </span>
+
+                        <h3>
+                            Filtrar
+                        </h3>
+
+                    </div>
+
+
+                    <!-- CATEGORÍA -->
+
+                    <div class="filtro-grupo">
+
+                        <h4>
+                            Categoría
+                        </h4>
+
+
+                        <label class="filtro-opcion">
+
+                            <input
+                                type="checkbox"
+                                class="filtro"
+                                data-filtro="tipo"
+                                value="tolva"
+                            >
+
+                            <span class="checkbox"></span>
+
+                            Tolvas
+
+                        </label>
+
+
+                        <label class="filtro-opcion">
+
+                            <input
+                                type="checkbox"
+                                class="filtro"
+                                data-filtro="tipo"
+                                value="mixer"
+                            >
+
+                            <span class="checkbox"></span>
+
+                            Mixers
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- CAPACIDAD -->
+
+                    <div class="filtro-grupo">
+
+                        <h4>
+                            Capacidad
+                        </h4>
+
+
+                        <label class="filtro-opcion">
+
+                            <input
+                                type="checkbox"
+                                class="filtro"
+                                data-filtro="capacidad"
+                                value="hasta10"
+                            >
+
+                            <span class="checkbox"></span>
+
+                            Hasta 10.000 L
+
+                        </label>
+
+
+                        <label class="filtro-opcion">
+
+                            <input
+                                type="checkbox"
+                                class="filtro"
+                                data-filtro="capacidad"
+                                value="10a20"
+                            >
+
+                            <span class="checkbox"></span>
+
+                            10.000 – 20.000 L
+
+                        </label>
+
+
+                        <label class="filtro-opcion">
+
+                            <input
+                                type="checkbox"
+                                class="filtro"
+                                data-filtro="capacidad"
+                                value="mas20"
+                            >
+
+                            <span class="checkbox"></span>
+
+                            Más de 20.000 L
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- ESTADO -->
+
+                    <div class="filtro-grupo">
+
+                        <h4>
+                            Estado
+                        </h4>
+
+
+                        <label class="filtro-opcion">
+
+                            <input
+                                type="checkbox"
+                                class="filtro"
+                                data-filtro="estado"
+                                value="usado"
+                            >
+
+                            <span class="checkbox"></span>
+
+                            Usado
+
+                        </label>
+
+
+                        <label class="filtro-opcion">
+
+                            <input
+                                type="checkbox"
+                                class="filtro"
+                                data-filtro="estado"
+                                value="nuevo"
+                            >
+
+                            <span class="checkbox"></span>
+
+                            Nuevo
+
+                        </label>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="limpiar-filtros"
+                        onclick="limpiarFiltros()"
+                    >
+                        Limpiar filtros
+                    </button>
+
+                </aside>
+
+
+                <!-- =========================
+                     RESULTADOS
+                ========================== -->
+
+                <div class="resultados-catalogo">
+
+                    <div class="resultados-header">
+
+                        <span>
+
+                            <strong id="cantidad-maquinas">
+                                4
+                            </strong>
+
+                            máquinas disponibles
+
+                        </span>
+
+                    </div>
+
+
+                    <!-- =========================
+                         TARJETAS
+                    ========================== -->
+
+                    <div class="grid-maquinas">
+
+
+                        <!-- =========================
+                             TOLVA 1
+                        ========================== -->
+
+                        <article
+                            class="maquina-card"
+                            data-tipo="tolva"
+                            data-capacidad="10a20"
+                            data-estado="usado"
+                        >
+
+                            <div class="maquina-imagen">
+
+                                <img
+                                    src="Imagenes/tolva icono.jpg"
+                                    alt="Tolva"
+                                >
+
+                                <span class="maquina-etiqueta">
+                                    TOLVA
+                                </span>
+
+                            </div>
+
+
+                            <div class="maquina-info">
+
+                                <h3>
+                                    Tolva
+                                </h3>
+
+                                <p>
+                                    Consultar modelo,
+                                    capacidad y disponibilidad.
+                                </p>
+
+                                <a
+                                    href="https://wa.me/5492392407678"
+                                    class="boton-consultar"
+                                    target="_blank"
+                                >
+                                    <span>◉</span>
+                                    Consultar
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- =========================
+                             TOLVA 2
+                        ========================== -->
+
+                        <article
+                            class="maquina-card"
+                            data-tipo="tolva"
+                            data-capacidad="mas20"
+                            data-estado="usado"
+                        >
+
+                            <div class="maquina-imagen">
+
+                                <img
+                                    src="Imagenes/tolva icono.jpg"
+                                    alt="Tolva"
+                                >
+
+                                <span class="maquina-etiqueta">
+                                    TOLVA
+                                </span>
+
+                            </div>
+
+
+                            <div class="maquina-info">
+
+                                <h3>
+                                    Tolva
+                                </h3>
+
+                                <p>
+                                    Consultar modelo,
+                                    capacidad y disponibilidad.
+                                </p>
+
+                                <a
+                                    href="https://wa.me/5492392407678"
+                                    class="boton-consultar"
+                                    target="_blank"
+                                >
+                                    <span>◉</span>
+                                    Consultar
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- =========================
+                             MIXER 1
+                        ========================== -->
+
+                        <article
+                            class="maquina-card"
+                            data-tipo="mixer"
+                            data-capacidad="10a20"
+                            data-estado="usado"
+                        >
+
+                            <div class="maquina-imagen">
+
+                                <img
+                                    src="Imagenes/mixer icono.jpg"
+                                    alt="Mixer agrícola"
+                                >
+
+                                <span class="maquina-etiqueta">
+                                    MIXER
+                                </span>
+
+                            </div>
+
+
+                            <div class="maquina-info">
+
+                                <h3>
+                                    Mixer
+                                </h3>
+
+                                <p>
+                                    Consultar modelo,
+                                    capacidad y disponibilidad.
+                                </p>
+
+                                <a
+                                    href="https://wa.me/5492392407678"
+                                    class="boton-consultar"
+                                    target="_blank"
+                                >
+                                    <span>◉</span>
+                                    Consultar
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- =========================
+                             MIXER 2
+                        ========================== -->
+
+                        <article
+                            class="maquina-card"
+                            data-tipo="mixer"
+                            data-capacidad="mas20"
+                            data-estado="nuevo"
+                        >
+
+                            <div class="maquina-imagen">
+
+                                <img
+                                    src="Imagenes/mixer icono.jpg"
+                                    alt="Mixer agrícola"
+                                >
+
+                                <span class="maquina-etiqueta">
+                                    MIXER
+                                </span>
+
+                            </div>
+
+
+                            <div class="maquina-info">
+
+                                <h3>
+                                    Mixer
+                                </h3>
+
+                                <p>
+                                    Consultar modelo,
+                                    capacidad y disponibilidad.
+                                </p>
+
+                                <a
+                                    href="https://wa.me/5492392407678"
+                                    class="boton-consultar"
+                                    target="_blank"
+                                >
+                                    <span>◉</span>
+                                    Consultar
+                                </a>
+
+                            </div>
+
+                        </article>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CTA
+    ========================== -->
+
+    <section class="cta">
+
+        <div class="cta-contenido">
+
+            <div class="cta-icono">
+                ☎
+            </div>
+
+
+            <div>
+
+                <h2>
+                    ¿Buscás una tolva o mixer?
+                </h2>
+
+                <p>
+                    Decinos qué necesitás y te ayudamos
+                    a encontrar la máquina adecuada.
+                </p>
+
+            </div>
+
+
+            <a
+                href="https://wa.me/5492392407678"
+                class="boton-amarillo"
+                target="_blank"
+            >
+                Consultar por WhatsApp
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer id="contacto">
+
+        <div class="footer-contenido">
+
+
+            <div class="footer-marca">
+
+                <img
+                    src="Imagenes/portada.png"
+                    alt="Maquinarias Troya"
+                >
+
+                <p>
+                    Compra, venta y reparación de
+                    maquinaria agrícola, vial y camiones.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="index.html#nosotros">
+                    Sobre nosotros
+                </a>
+
+                <a href="index.html#maquinaria">
+                    Maquinaria
+                </a>
+
+                <a href="index.html#contacto">
+                    Contacto
+                </a>
+
+            </div>
+
+
+            <div class="footer-contacto">
+
+                <p>
+                    📍 30 de Agosto, Buenos Aires
+                </p>
+
+                <p>
+                    📞 02392 407678
+                </p>
+
+                <a
+                    href="https://www.instagram.com/maquinariastroya/"
+                    target="_blank"
+                >
+                    Instagram
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Maquinarias Troya.
+                Todos los derechos reservados.
+            </span>
+
+            <span>
+                Maquinaria agrícola, vial y transporte.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+    function abrirMenu() {
+
+        document.body.classList.add("menu-abierto");
+
+    }
+
+
+    function cerrarMenu() {
+
+        document.body.classList.remove("menu-abierto");
+
+    }
+
+
+    /* =================================
+       FILTROS
+    ================================= */
+
+    const filtros = document.querySelectorAll(".filtro");
+
+    const maquinas = document.querySelectorAll(".maquina-card");
+
+    const contador = document.getElementById("cantidad-maquinas");
+
+
+    filtros.forEach((filtro) => {
+
+        filtro.addEventListener("change", aplicarFiltros);
+
+    });
+
+
+    function aplicarFiltros() {
+
+        const filtrosTipo = Array.from(
+            document.querySelectorAll(
+                '.filtro[data-filtro="tipo"]:checked'
+            )
+        ).map(filtro => filtro.value);
+
+
+        const filtrosCapacidad = Array.from(
+            document.querySelectorAll(
+                '.filtro[data-filtro="capacidad"]:checked'
+            )
+        ).map(filtro => filtro.value);
+
+
+        const filtrosEstado = Array.from(
+            document.querySelectorAll(
+                '.filtro[data-filtro="estado"]:checked'
+            )
+        ).map(filtro => filtro.value);
+
+
+        let cantidad = 0;
+
+
+        maquinas.forEach((maquina) => {
+
+            const tipo = maquina.dataset.tipo;
+
+            const capacidad = maquina.dataset.capacidad;
+
+            const estado = maquina.dataset.estado;
+
+
+            const coincideTipo =
+                filtrosTipo.length === 0 ||
+                filtrosTipo.includes(tipo);
+
+
+            const coincideCapacidad =
+                filtrosCapacidad.length === 0 ||
+                filtrosCapacidad.includes(capacidad);
+
+
+            const coincideEstado =
+                filtrosEstado.length === 0 ||
+                filtrosEstado.includes(estado);
+
+
+            const mostrar =
+                coincideTipo &&
+                coincideCapacidad &&
+                coincideEstado;
+
+
+            if (mostrar) {
+
+                maquina.style.display = "";
+
+                cantidad++;
+
+            } else {
+
+                maquina.style.display = "none";
+
+            }
+
+        });
+
+
+        contador.textContent = cantidad;
+
+    }
+
+
+    /* =================================
+       LIMPIAR FILTROS
+    ================================= */
+
+    function limpiarFiltros() {
+
+        filtros.forEach((filtro) => {
+
+            filtro.checked = false;
+
+        });
+
+
+        maquinas.forEach((maquina) => {
+
+            maquina.style.display = "";
+
+        });
+
+
+        contador.textContent = maquinas.length;
+
+    }
+
+    </script>
+
+</body>
+
+</html>
