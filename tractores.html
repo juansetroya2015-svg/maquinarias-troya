@@ -3,55 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Tractores | Maquinarias Troya</title>
+
+    <meta
+        name="description"
+        content="Tractores disponibles en Maquinarias Troya."
+    >
+
     <link rel="stylesheet" href="estilo.css">
 </head>
 
-<body>
+<body class="pagina-categoria">
+
+    <!-- HEADER -->
 
     <header>
-        <nav>
-            <div class="logo">
-    <img src="imagenes/logo letras.png" alt="Maquinarias Troya">
-</div>
 
-            <div class="menu">
-                <a href="index.html">Inicio</a>
-                <a href="index.html#maquinaria">Maquinaria</a>
-                <a href="index.html#contacto">Contacto</a>
+        <nav class="encabezado">
+
+            <button
+                class="boton-menu"
+                onclick="abrirMenu()"
+                aria-label="Abrir menú"
+            >
+                ☰
+            </button>
+
+            <a href="index.html" class="logo-encabezado">
+                <img
+                    src="Imagenes/portada.png"
+                    alt="Maquinarias Troya"
+                >
+            </a>
+
+            <div class="menu-desktop">
+
+                <a href="index.html">
+                    Inicio
+                </a>
+
+                <a href="index.html#nosotros">
+                    Sobre nosotros
+                </a>
+
+                <a href="index.html#maquinaria" class="activo">
+                    Maquinaria
+                </a>
+
+                <a href="index.html#contacto">
+                    Contacto
+                </a>
+
             </div>
+
+            <div class="fondo-menu"></div>
+
+            <div class="menu-lateral">
+
+                <button
+                    class="cerrar-menu"
+                    onclick="cerrarMenu()"
+                >
+                    ✕
+                </button>
+
+                <a href="index.html" onclick="cerrarMenu()">
+                    Inicio
+                </a>
+
+                <a href="index.html#nosotros" onclick="cerrarMenu()">
+                    Sobre nosotros
+                </a>
+
+                <a href="index.html#maquinaria" onclick="cerrarMenu()">
+                    Maquinaria
+                </a>
+
+                <a href="index.html#contacto" onclick="cerrarMenu()">
+                    Contacto
+                </a>
+
+            </div>
+
         </nav>
+
     </header>
 
-    <main class="contenido">
 
-        <h1>Tractores</h1>
+    <!-- ENCABEZADO -->
 
-        <p>Tractores disponibles</p>
+    <main>
 
-        <div class="maquinas">
+        <section class="categoria-portada">
 
-            <div class="maquina">
-                <h2>Tractor</h2>
+            <div class="categoria-portada-contenido">
 
-                <p>Marca: Próximamente</p>
-                <p>Modelo: Próximamente</p>
-                <p>Año: Próximamente</p>
+                <span>
+                    MAQUINARIA AGRÍCOLA
+                </span>
 
-                <a href="https://wa.me/5492392407678" class="boton-whatsapp">
-                    Consultar por WhatsApp
+                <h1>
+                    Tractores
+                </h1>
+
+                <p>
+                    Tractores para distintas necesidades
+                    y aplicaciones del campo.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CATÁLOGO -->
+
+        <section class="catalogo-maquinas">
+
+            <div class="catalogo-encabezado">
+
+                <div>
+
+                    <span class="seccion-kicker">
+                        CATÁLOGO
+                    </span>
+
+                    <h2>
+                        Tractores disponibles
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="grid-maquinas">
+
+
+                <!-- TRACTOR -->
+
+                <article class="maquina-card">
+
+                    <div class="maquina-imagen">
+
+                        <img
+                            src="Imagenes/tractor icono.avif"
+                            alt="Tractor"
+                        >
+
+                    </div>
+
+                    <div class="maquina-info">
+
+                        <span class="maquina-tipo">
+                            TRACTOR
+                        </span>
+
+                        <h3>
+                            Tractor
+                        </h3>
+
+                        <p>
+                            Consultar modelo y disponibilidad.
+                        </p>
+
+                        <a
+                            href="https://wa.me/5492392407678"
+                            class="boton-consultar"
+                        >
+                            Consultar por WhatsApp
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- DUPLICAR ESTA CARD
+                     CUANDO HAYA MÁS TRACTORES -->
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-contenido">
+
+            <div class="footer-marca">
+
+                <img
+                    src="Imagenes/portada.png"
+                    alt="Troya Maquinarias"
+                >
+
+                <p>
+                    Compra, venta y reparación de maquinaria
+                    agrícola, vial y camiones.
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Inicio
                 </a>
+
+                <a href="index.html#nosotros">
+                    Sobre nosotros
+                </a>
+
+                <a href="index.html#maquinaria">
+                    Maquinaria
+                </a>
+
+                <a href="index.html#contacto">
+                    Contacto
+                </a>
+
+            </div>
+
+            <div class="footer-contacto">
+
+                <p>
+                    📍 30 de Agosto, Buenos Aires
+                </p>
+
+                <p>
+                    📞 02392 407678
+                </p>
+
+                <a
+                    href="https://www.instagram.com/maquinariastroya/"
+                    target="_blank"
+                >
+                    Instagram
+                </a>
+
             </div>
 
         </div>
 
-    </main>
+        <div class="footer-bottom">
 
-    <footer>
-        <p>Maquinarias Troya</p>
-        <p>30 de Agosto, Buenos Aires</p>
-        <p>Tel: 2392 407678</p>
+            <span>
+                © 2026 Maquinarias Troya.
+                Todos los derechos reservados.
+            </span>
+
+            <span>
+                Maquinaria agrícola, vial y transporte.
+            </span>
+
+        </div>
+
     </footer>
+
+
+    <script>
+
+        function abrirMenu() {
+            document.body.classList.add("menu-abierto");
+        }
+
+        function cerrarMenu() {
+            document.body.classList.remove("menu-abierto");
+        }
+
+    </script>
 
 </body>
 </html>
