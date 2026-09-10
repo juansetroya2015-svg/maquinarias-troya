@@ -3,80 +3,1313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vial | Maquinarias Troya</title>
+
+    <title>Maquinaria Vial | Maquinarias Troya</title>
+
     <link rel="stylesheet" href="estilo.css">
 </head>
 
 <body>
 
-<header>
-    <nav>
+    <!-- HEADER -->
+    <header>
 
-        
+        <div class="encabezado">
 
-        <div class="menu">
-            <a href="index.html">Inicio</a>
-            <a href="index.html#maquinaria">Maquinaria</a>
-            <a href="index.html#contacto">Contacto</a>
+            <!-- LOGO -->
+            <a href="index.html" class="logo-encabezado">
+                <img src="Imagenes/portada.png" alt="Maquinarias Troya">
+            </a>
+
+            <!-- MENÚ DESKTOP -->
+            <nav class="menu-desktop">
+
+                <a href="index.html">Inicio</a>
+
+                <a href="index.html#nosotros">Sobre nosotros</a>
+
+                <a href="index.html#maquinaria" class="activo">Maquinaria</a>
+
+                <a href="index.html#contacto">Contacto</a>
+
+                <!-- BUSCADOR -->
+                <button
+                    class="boton-busqueda"
+                    onclick="abrirBuscador()"
+                    aria-label="Buscar"
+                >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <circle cx="10.5" cy="10.5" r="6.5"></circle>
+                        <line x1="15.5" y1="15.5" x2="21" y2="21"></line>
+                    </svg>
+                </button>
+
+                <div class="buscador" id="buscador">
+
+                    <input
+                        type="text"
+                        id="campoBusqueda"
+                        placeholder="¿Qué máquina buscás?"
+                        autocomplete="off"
+                    >
+
+                </div>
+
+            </nav>
+
+
+            <!-- BOTÓN MENÚ MOBILE -->
+            <button
+                class="boton-menu"
+                onclick="abrirMenu()"
+                aria-label="Abrir menú"
+            >
+                ☰
+            </button>
+
         </div>
 
-    </nav>
-</header>
 
-<main class="contenido">
+        <!-- MENÚ MOBILE -->
+        <div
+            class="fondo-menu"
+            onclick="cerrarMenu()"
+        ></div>
 
-    <h1>Maquinaria Vial</h1>
-    <p class="descripcion-maquinaria">
-    Encontrá la maquinaria vial que estás buscando
-</p>
+        <nav class="menu-lateral">
 
-    <div class="categorias">
+            <button
+                class="cerrar-menu"
+                onclick="cerrarMenu()"
+                aria-label="Cerrar menú"
+            >
+                ×
+            </button>
 
-    <div class="categoria">
-        <a href="#">
-            <span>Excavadoras</span>
-        </a>
-    </div>
+            <a href="index.html" onclick="cerrarMenu()">Inicio</a>
 
-    <div class="categoria">
-        <a href="#">
-            <span>Motoniveladoras</span>
-        </a>
-    </div>
+            <a href="index.html#nosotros" onclick="cerrarMenu()">
+                Sobre nosotros
+            </a>
 
-    <div class="categoria">
-        <a href="#">
-            <span>Autoelevadores</span>
-        </a>
-    </div>
+            <a href="index.html#maquinaria" onclick="cerrarMenu()">
+                Maquinaria
+            </a>
 
-    <div class="categoria">
-        <a href="#">
-            <span>Minicargadoras</span>
-        </a>
-    </div>
+            <a href="index.html#contacto" onclick="cerrarMenu()">
+                Contacto
+            </a>
 
-    <div class="categoria">
-        <a href="#">
-            <span>Palas cargadoras</span>
-        </a>
-    </div>
+        </nav>
 
-    <div class="categoria">
-        <a href="#">
-            <span>Terminadoras de asfalto</span>
-        </a>
-    </div>
+    </header>
 
-</div>
 
-</main>
+    <!-- PORTADA VIAL -->
+    <section class="categoria-portada">
 
-<footer id="contacto">
-    <p>Maquinarias Troya</p>
-    <p>30 de Agosto, Buenos Aires</p>
-    <p>Tel: 2392 407678</p>
-</footer>
+        <div class="categoria-portada-contenido">
+
+            <span>MAQUINARIAS TROYA · CATEGORÍA</span>
+
+            <h1>Maquinaria Vial</h1>
+
+            <p>
+                Equipos para construcción, movimiento de suelo y obras viales.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATÁLOGO -->
+    <main class="catalogo-maquinas">
+
+        <div class="catalogo-encabezado">
+
+            <div>
+
+                <span class="seccion-kicker">
+                    CATÁLOGO VIAL
+                </span>
+
+                <h2>
+                    Encontrá tu próxima máquina
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="catalogo-con-filtros">
+
+
+            <!-- FILTROS -->
+            <aside class="filtros-sidebar">
+
+                <div class="filtros-header">
+
+                    <span class="filtros-kicker">
+                        FILTRAR
+                    </span>
+
+                    <h3>
+                        Maquinaria
+                    </h3>
+
+                </div>
+
+
+                <!-- TIPO -->
+                <div class="filtro-grupo">
+
+                    <h4>
+                        Tipo de máquina
+                    </h4>
+
+
+                    <label class="filtro-opcion">
+
+                        <input
+                            type="checkbox"
+                            class="filtro"
+                            data-filtro="tipo"
+                            value="excavadora"
+                        >
+
+                        <span class="checkbox"></span>
+
+                        Excavadora
+
+                    </label>
+
+
+                    <label class="filtro-opcion">
+
+                        <input
+                            type="checkbox"
+                            class="filtro"
+                            data-filtro="tipo"
+                            value="motoniveladora"
+                        >
+
+                        <span class="checkbox"></span>
+
+                        Motoniveladora
+
+                    </label>
+
+
+                    <label class="filtro-opcion">
+
+                        <input
+                            type="checkbox"
+                            class="filtro"
+                            data-filtro="tipo"
+                            value="autoelevador"
+                        >
+
+                        <span class="checkbox"></span>
+
+                        Autoelevador
+
+                    </label>
+
+
+                    <label class="filtro-opcion">
+
+                        <input
+                            type="checkbox"
+                            class="filtro"
+                            data-filtro="tipo"
+                            value="minicargadora"
+                        >
+
+                        <span class="checkbox"></span>
+
+                        Minicargadora
+
+                    </label>
+
+
+                    <label class="filtro-opcion">
+
+                        <input
+                            type="checkbox"
+                            class="filtro"
+                            data-filtro="tipo"
+                            value="pala cargadora"
+                        >
+
+                        <span class="checkbox"></span>
+
+                        Pala cargadora
+
+                    </label>
+
+
+                    <label class="filtro-opcion">
+
+                        <input
+                            type="checkbox"
+                            class="filtro"
+                            data-filtro="tipo"
+                            value="terminadora"
+                        >
+
+                        <span class="checkbox"></span>
+
+                        Terminadora de asfalto
+
+                    </label>
+
+                </div>
+
+
+                <!-- MARCA -->
+                <div class="filtro-grupo">
+
+                    <h4>
+                        Marca
+                    </h4>
+
+
+                    <label class="filtro-opcion">
+
+                        <input
+                            type="checkbox"
+                            class="filtro"
+                            data-filtro="marca"
+                            value="caterpillar"
+                        >
+
+                        <span class="checkbox"></span>
+
+                        Caterpillar
+
+                    </label>
+
+
+                    <label class="filtro-opcion">
+
+                        <input
+                            type="checkbox"
+                            class="filtro"
+                            data-filtro="marca"
+                            value="komatsu"
+                        >
+
+                        <span class="checkbox"></span>
+
+                        Komatsu
+
+                    </label>
+
+
+                    <label class="filtro-opcion">
+
+                        <input
+                            type="checkbox"
+                            class="filtro"
+                            data-filtro="marca"
+                            value="volvo"
+                        >
+
+                        <span class="checkbox"></span>
+
+                        Volvo
+
+                    </label>
+
+
+                    <label class="filtro-opcion">
+
+                        <input
+                            type="checkbox"
+                            class="filtro"
+                            data-filtro="marca"
+                            value="john deere"
+                        >
+
+                        <span class="checkbox"></span>
+
+                        John Deere
+
+                    </label>
+
+
+                    <label class="filtro-opcion">
+
+                        <input
+                            type="checkbox"
+                            class="filtro"
+                            data-filtro="marca"
+                            value="case"
+                        >
+
+                        <span class="checkbox"></span>
+
+                        Case
+
+                    </label>
+
+
+                    <label class="filtro-opcion">
+
+                        <input
+                            type="checkbox"
+                            class="filtro"
+                            data-filtro="marca"
+                            value="new holland"
+                        >
+
+                        <span class="checkbox"></span>
+
+                        New Holland
+
+                    </label>
+
+                </div>
+
+
+                <!-- AÑO -->
+                <div class="filtro-grupo">
+
+                    <h4>
+                        Año
+                    </h4>
+
+
+                    <label class="filtro-opcion">
+
+                        <input
+                            type="checkbox"
+                            class="filtro"
+                            data-filtro="ano"
+                            value="2020"
+                        >
+
+                        <span class="checkbox"></span>
+
+                        2020 en adelante
+
+                    </label>
+
+
+                    <label class="filtro-opcion">
+
+                        <input
+                            type="checkbox"
+                            class="filtro"
+                            data-filtro="ano"
+                            value="2015"
+                        >
+
+                        <span class="checkbox"></span>
+
+                        2015 – 2019
+
+                    </label>
+
+
+                    <label class="filtro-opcion">
+
+                        <input
+                            type="checkbox"
+                            class="filtro"
+                            data-filtro="ano"
+                            value="2010"
+                        >
+
+                        <span class="checkbox"></span>
+
+                        2010 – 2014
+
+                    </label>
+
+
+                    <label class="filtro-opcion">
+
+                        <input
+                            type="checkbox"
+                            class="filtro"
+                            data-filtro="ano"
+                            value="2009"
+                        >
+
+                        <span class="checkbox"></span>
+
+                        Hasta 2009
+
+                    </label>
+
+                </div>
+
+
+                <!-- LIMPIAR -->
+                <button
+                    class="limpiar-filtros"
+                    onclick="limpiarFiltros()"
+                >
+                    Limpiar filtros
+                </button>
+
+            </aside>
+
+
+            <!-- RESULTADOS -->
+            <section class="resultados-catalogo">
+
+                <div class="resultados-header">
+
+                    <span>
+                        Mostrando
+                        <strong id="cantidadResultados">6</strong>
+                        máquinas
+                    </span>
+
+                </div>
+
+
+                <!-- GRID -->
+                <div class="grid-maquinas" id="gridMaquinas">
+
+
+                    <!-- EXCAVADORA -->
+                    <article
+                        class="maquina-card"
+                        data-tipo="excavadora"
+                        data-marca="caterpillar"
+                        data-ano="2021"
+                    >
+
+                        <div class="maquina-imagen">
+
+                            <img
+                                src="Imagenes/excavadora.jpg"
+                                alt="Excavadora Caterpillar"
+                            >
+
+                        </div>
+
+
+                        <div class="maquina-info">
+
+                            <span class="maquina-tipo">
+                                EXCAVADORA
+                            </span>
+
+                            <h3>
+                                Caterpillar
+                            </h3>
+
+                            <p>
+                                Excavadora hidráulica para trabajos de movimiento de suelo.
+                            </p>
+
+                            <a
+                                href="https://wa.me/5492392407678?text=Hola%20Maquinarias%20Troya,%20quiero%20consultar%20por%20la%20excavadora%20Caterpillar."
+                                class="boton-consultar"
+                                target="_blank"
+                            >
+                                Consultar
+
+                                <span>→</span>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- MOTONIVELADORA -->
+                    <article
+                        class="maquina-card"
+                        data-tipo="motoniveladora"
+                        data-marca="volvo"
+                        data-ano="2019"
+                    >
+
+                        <div class="maquina-imagen">
+
+                            <img
+                                src="Imagenes/motoniveladora.jpg"
+                                alt="Motoniveladora Volvo"
+                            >
+
+                        </div>
+
+
+                        <div class="maquina-info">
+
+                            <span class="maquina-tipo">
+                                MOTONIVELADORA
+                            </span>
+
+                            <h3>
+                                Volvo
+                            </h3>
+
+                            <p>
+                                Equipo destinado a nivelación y preparación de terrenos.
+                            </p>
+
+                            <a
+                                href="https://wa.me/5492392407678?text=Hola%20Maquinarias%20Troya,%20quiero%20consultar%20por%20la%20motoniveladora%20Volvo."
+                                class="boton-consultar"
+                                target="_blank"
+                            >
+                                Consultar
+
+                                <span>→</span>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- AUTOELEVADOR -->
+                    <article
+                        class="maquina-card"
+                        data-tipo="autoelevador"
+                        data-marca="toyota"
+                        data-ano="2020"
+                    >
+
+                        <div class="maquina-imagen">
+
+                            <img
+                                src="Imagenes/autoelevador.jpg"
+                                alt="Autoelevador"
+                            >
+
+                        </div>
+
+
+                        <div class="maquina-info">
+
+                            <span class="maquina-tipo">
+                                AUTOELEVADOR
+                            </span>
+
+                            <h3>
+                                Autoelevador
+                            </h3>
+
+                            <p>
+                                Equipo para manipulación y movimiento de cargas.
+                            </p>
+
+                            <a
+                                href="https://wa.me/5492392407678?text=Hola%20Maquinarias%20Troya,%20quiero%20consultar%20por%20el%20autoelevador."
+                                class="boton-consultar"
+                                target="_blank"
+                            >
+                                Consultar
+
+                                <span>→</span>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- MINICARGADORA -->
+                    <article
+                        class="maquina-card"
+                        data-tipo="minicargadora"
+                        data-marca="case"
+                        data-ano="2022"
+                    >
+
+                        <div class="maquina-imagen">
+
+                            <img
+                                src="Imagenes/minicargadora.jpg"
+                                alt="Minicargadora Case"
+                            >
+
+                        </div>
+
+
+                        <div class="maquina-info">
+
+                            <span class="maquina-tipo">
+                                MINICARGADORA
+                            </span>
+
+                            <h3>
+                                Case
+                            </h3>
+
+                            <p>
+                                Máquina compacta y versátil para diferentes trabajos.
+                            </p>
+
+                            <a
+                                href="https://wa.me/5492392407678?text=Hola%20Maquinarias%20Troya,%20quiero%20consultar%20por%20la%20minicargadora%20Case."
+                                class="boton-consultar"
+                                target="_blank"
+                            >
+                                Consultar
+
+                                <span>→</span>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PALA CARGADORA -->
+                    <article
+                        class="maquina-card"
+                        data-tipo="pala cargadora"
+                        data-marca="volvo"
+                        data-ano="2021"
+                    >
+
+                        <div class="maquina-imagen">
+
+                            <img
+                                src="Imagenes/pala cargadora.jpg"
+                                alt="Pala cargadora Volvo"
+                            >
+
+                        </div>
+
+
+                        <div class="maquina-info">
+
+                            <span class="maquina-tipo">
+                                PALA CARGADORA
+                            </span>
+
+                            <h3>
+                                Volvo
+                            </h3>
+
+                            <p>
+                                Pala cargadora para movimiento y carga de materiales.
+                            </p>
+
+                            <a
+                                href="https://wa.me/5492392407678?text=Hola%20Maquinarias%20Troya,%20quiero%20consultar%20por%20la%20pala%20cargadora%20Volvo."
+                                class="boton-consultar"
+                                target="_blank"
+                            >
+                                Consultar
+
+                                <span>→</span>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- TERMINADORA -->
+                    <article
+                        class="maquina-card"
+                        data-tipo="terminadora"
+                        data-marca="caterpillar"
+                        data-ano="2018"
+                    >
+
+                        <div class="maquina-imagen">
+
+                            <img
+                                src="Imagenes/terminadora de asfalto.jpg"
+                                alt="Terminadora de asfalto Caterpillar"
+                            >
+
+                        </div>
+
+
+                        <div class="maquina-info">
+
+                            <span class="maquina-tipo">
+                                TERMINADORA DE ASFALTO
+                            </span>
+
+                            <h3>
+                                Caterpillar
+                            </h3>
+
+                            <p>
+                                Equipo especializado para pavimentación y trabajos viales.
+                            </p>
+
+                            <a
+                                href="https://wa.me/5492392407678?text=Hola%20Maquinarias%20Troya,%20quiero%20consultar%20por%20la%20terminadora%20de%20asfalto."
+                                class="boton-consultar"
+                                target="_blank"
+                            >
+                                Consultar
+
+                                <span>→</span>
+
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+                <!-- SIN RESULTADOS -->
+                <div
+                    id="sinResultados"
+                    style="
+                        display:none;
+                        padding:60px 20px;
+                        text-align:center;
+                        color:#69736f;
+                    "
+                >
+
+                    <h3
+                        style="
+                            margin-bottom:10px;
+                            color:#17201c;
+                            font-size:22px;
+                        "
+                    >
+                        No encontramos máquinas
+                    </h3>
+
+                    <p>
+                        Probá combinando otros filtros.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <div class="cta-contenido">
+
+            <div class="cta-icono">
+                ✓
+            </div>
+
+            <div>
+
+                <h2>
+                    ¿Buscás una máquina específica?
+                </h2>
+
+                <p>
+                    Consultanos y te ayudamos a encontrar la opción adecuada.
+                </p>
+
+            </div>
+
+            <a
+                href="https://wa.me/5492392407678?text=Hola%20Maquinarias%20Troya,%20estoy%20buscando%20una%20maquinaria%20vial."
+                class="boton-amarillo"
+                target="_blank"
+            >
+                Consultar por WhatsApp
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer id="contacto">
+
+        <div class="footer-contenido">
+
+
+            <div class="footer-marca">
+
+                <img
+                    src="Imagenes/portada.png"
+                    alt="Maquinarias Troya"
+                >
+
+                <p>
+                    Compra y venta de maquinaria agrícola,
+                    vial y transporte.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3
+                    style="
+                        margin-bottom:18px;
+                        font-size:13px;
+                    "
+                >
+                    Navegación
+                </h3>
+
+                <div class="footer-links">
+
+                    <a href="index.html">
+                        Inicio
+                    </a>
+
+                    <a href="index.html#nosotros">
+                        Sobre nosotros
+                    </a>
+
+                    <a href="index.html#maquinaria">
+                        Maquinaria
+                    </a>
+
+                    <a href="index.html#contacto">
+                        Contacto
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-contacto">
+
+                <h3
+                    style="
+                        margin-bottom:3px;
+                        font-size:13px;
+                    "
+                >
+                    Contacto
+                </h3>
+
+                <p>
+                    30 de Agosto, Buenos Aires
+                </p>
+
+                <a
+                    href="https://wa.me/5492392407678"
+                    target="_blank"
+                >
+                    WhatsApp
+                </a>
+
+                <a
+                    href="https://www.instagram.com/maquinariastroya/"
+                    target="_blank"
+                >
+                    Instagram
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Maquinarias Troya
+            </span>
+
+            <span>
+                Todos los derechos reservados
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        /* =========================
+           MENÚ MOBILE
+        ========================= */
+
+        function abrirMenu() {
+
+            document.body.classList.add("menu-abierto");
+
+        }
+
+
+        function cerrarMenu() {
+
+            document.body.classList.remove("menu-abierto");
+
+        }
+
+
+        /* =========================
+           BUSCADOR
+        ========================= */
+
+        function abrirBuscador() {
+
+            const buscador =
+                document.getElementById("buscador");
+
+            const campo =
+                document.getElementById("campoBusqueda");
+
+            buscador.classList.toggle("abierto");
+
+            if (
+                buscador.classList.contains("abierto")
+            ) {
+
+                campo.focus();
+
+            }
+
+        }
+
+
+        document
+            .getElementById("campoBusqueda")
+            .addEventListener(
+                "keydown",
+                function(evento) {
+
+                    if (
+                        evento.key !== "Enter"
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    const busqueda =
+                        this.value
+                            .toLowerCase()
+                            .trim();
+
+
+                    if (
+                        busqueda === "tractor" ||
+                        busqueda === "tractores"
+                    ) {
+
+                        window.location.href =
+                            "tractores.html";
+
+                        return;
+
+                    }
+
+
+                    if (
+                        busqueda === "camion" ||
+                        busqueda === "camiones" ||
+                        busqueda === "camión"
+                    ) {
+
+                        window.location.href =
+                            "camiones.html";
+
+                        return;
+
+                    }
+
+
+                    if (
+                        busqueda === "acoplado" ||
+                        busqueda === "acoplados"
+                    ) {
+
+                        window.location.href =
+                            "acoplados.html";
+
+                        return;
+
+                    }
+
+
+                    if (
+                        busqueda === "tolva" ||
+                        busqueda === "tolvas" ||
+                        busqueda === "mixer" ||
+                        busqueda === "mixers"
+                    ) {
+
+                        window.location.href =
+                            "tolvas-mixers.html";
+
+                        return;
+
+                    }
+
+
+                    if (
+                        busqueda === "vial" ||
+                        busqueda === "excavadora" ||
+                        busqueda === "excavadoras" ||
+                        busqueda === "motoniveladora" ||
+                        busqueda === "motoniveladoras" ||
+                        busqueda === "autoelevador" ||
+                        busqueda === "autoelevadores" ||
+                        busqueda === "minicargadora" ||
+                        busqueda === "minicargadoras" ||
+                        busqueda === "pala cargadora" ||
+                        busqueda === "terminadora de asfalto"
+                    ) {
+
+                        window.location.href =
+                            "vial.html";
+
+                        return;
+
+                    }
+
+                }
+            );
+
+
+        /* =========================
+           FILTROS
+        ========================= */
+
+        const filtros =
+            document.querySelectorAll(".filtro");
+
+        const maquinas =
+            document.querySelectorAll(".maquina-card");
+
+        const cantidadResultados =
+            document.getElementById(
+                "cantidadResultados"
+            );
+
+        const sinResultados =
+            document.getElementById(
+                "sinResultados"
+            );
+
+
+        filtros.forEach(
+            function(filtro) {
+
+                filtro.addEventListener(
+                    "change",
+                    aplicarFiltros
+                );
+
+            }
+        );
+
+
+        function aplicarFiltros() {
+
+            const seleccionados = {
+
+                tipo: [],
+                marca: [],
+                ano: []
+
+            };
+
+
+            filtros.forEach(
+                function(filtro) {
+
+                    if (
+                        filtro.checked
+                    ) {
+
+                        seleccionados[
+                            filtro.dataset.filtro
+                        ].push(
+                            filtro.value
+                        );
+
+                    }
+
+                }
+            );
+
+
+            let cantidad = 0;
+
+
+            maquinas.forEach(
+                function(maquina) {
+
+                    const tipo =
+                        maquina.dataset.tipo;
+
+                    const marca =
+                        maquina.dataset.marca;
+
+                    const ano =
+                        parseInt(
+                            maquina.dataset.ano
+                        );
+
+
+                    /* TIPO */
+
+                    const coincideTipo =
+                        seleccionados.tipo.length === 0 ||
+                        seleccionados.tipo.includes(
+                            tipo
+                        );
+
+
+                    /* MARCA */
+
+                    const coincideMarca =
+                        seleccionados.marca.length === 0 ||
+                        seleccionados.marca.includes(
+                            marca
+                        );
+
+
+                    /* AÑO */
+
+                    let coincideAno = true;
+
+
+                    if (
+                        seleccionados.ano.length > 0
+                    ) {
+
+                        coincideAno =
+                            seleccionados.ano.some(
+                                function(valor) {
+
+                                    if (
+                                        valor === "2020"
+                                    ) {
+
+                                        return ano >= 2020;
+
+                                    }
+
+                                    if (
+                                        valor === "2015"
+                                    ) {
+
+                                        return (
+                                            ano >= 2015 &&
+                                            ano <= 2019
+                                        );
+
+                                    }
+
+                                    if (
+                                        valor === "2010"
+                                    ) {
+
+                                        return (
+                                            ano >= 2010 &&
+                                            ano <= 2014
+                                        );
+
+                                    }
+
+                                    if (
+                                        valor === "2009"
+                                    ) {
+
+                                        return ano <= 2009;
+
+                                    }
+
+                                    return false;
+
+                                }
+                            );
+
+                    }
+
+
+                    const mostrar =
+                        coincideTipo &&
+                        coincideMarca &&
+                        coincideAno;
+
+
+                    if (mostrar) {
+
+                        maquina.style.display =
+                            "block";
+
+                        cantidad++;
+
+                    } else {
+
+                        maquina.style.display =
+                            "none";
+
+                    }
+
+                }
+            );
+
+
+            cantidadResultados.textContent =
+                cantidad;
+
+
+            if (cantidad === 0) {
+
+                sinResultados.style.display =
+                    "block";
+
+            } else {
+
+                sinResultados.style.display =
+                    "none";
+
+            }
+
+        }
+
+
+        /* =========================
+           LIMPIAR FILTROS
+        ========================= */
+
+        function limpiarFiltros() {
+
+            filtros.forEach(
+                function(filtro) {
+
+                    filtro.checked = false;
+
+                }
+            );
+
+
+            aplicarFiltros();
+
+        }
+
+    </script>
 
 </body>
+
 </html>
