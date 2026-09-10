@@ -1,58 +1,196 @@
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Tolvas | Maquinarias Troya</title>
+
+    <meta name="description" content="Tolvas disponibles en Maquinarias Troya.">
+
     <link rel="stylesheet" href="estilo.css">
 </head>
 
-<body>
+<body class="pagina-categoria">
 
 <header>
-    <nav>
+    <nav class="encabezado">
 
-        <div class="logo">
-            <img src="imagenes/logo letras.png" alt="Maquinarias Troya">
-        </div>
+        <button class="boton-menu" onclick="abrirMenu()" aria-label="Abrir menú">
+            ☰
+        </button>
 
-        <div class="menu">
+        <a href="index.html" class="logo-encabezado">
+            <img src="Imagenes/portada.png" alt="Maquinarias Troya">
+        </a>
+
+        <div class="menu-desktop">
             <a href="index.html">Inicio</a>
+            <a href="index.html#nosotros">Sobre nosotros</a>
             <a href="index.html#maquinaria">Maquinaria</a>
             <a href="index.html#contacto">Contacto</a>
+        </div>
+
+        <div class="fondo-menu" onclick="cerrarMenu()"></div>
+
+        <div class="menu-lateral">
+
+            <button class="cerrar-menu" onclick="cerrarMenu()">✕</button>
+
+            <a href="index.html" onclick="cerrarMenu()">Inicio</a>
+            <a href="index.html#nosotros" onclick="cerrarMenu()">Sobre nosotros</a>
+            <a href="index.html#maquinaria" onclick="cerrarMenu()">Maquinaria</a>
+            <a href="index.html#contacto" onclick="cerrarMenu()">Contacto</a>
+
         </div>
 
     </nav>
 </header>
 
-<main class="contenido">
 
-    <h1>Tolvas</h1>
-    <p>Tolvas disponibles</p>
+<section class="categoria-portada">
 
-    <div class="maquinas">
+    <div class="categoria-portada-contenido">
 
-        <div class="maquina">
-            <h2>Tolva</h2>
+        <span>MAQUINARIA AGRÍCOLA</span>
 
-            <p>Marca: Próximamente</p>
-            <p>Modelo: Próximamente</p>
-            <p>Año: Próximamente</p>
+        <h1>Tolvas</h1>
 
-            <a href="https://wa.me/5492392407678" class="boton-whatsapp">
-                Consultar por WhatsApp
-            </a>
+        <p>
+            Tolvas para distintas necesidades de trabajo y transporte.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="catalogo-maquinas">
+
+    <div class="catalogo-encabezado">
+
+        <div>
+
+            <span class="seccion-kicker">
+                CATÁLOGO
+            </span>
+
+            <h2>
+                Tolvas disponibles
+            </h2>
+
         </div>
 
     </div>
 
-</main>
+
+    <div class="grid-maquinas">
+
+        <article class="maquina-card">
+
+            <div class="maquina-imagen">
+
+                <img
+                    src="Imagenes/tolva icono.jpg"
+                    alt="Tolva"
+                >
+
+            </div>
+
+
+            <div class="maquina-info">
+
+                <span class="maquina-tipo">
+                    TOLVA
+                </span>
+
+                <h3>
+                    Tolva
+                </h3>
+
+                <p>
+                    Consultar modelo y disponibilidad.
+                </p>
+
+                <a
+                    href="https://wa.me/5492392407678"
+                    class="boton-consultar"
+                >
+                    Consultar por WhatsApp
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
 
 <footer id="contacto">
-    <p>Maquinarias Troya</p>
-    <p>30 de Agosto, Buenos Aires</p>
-    <p>Tel: 2392 407678</p>
+
+    <div class="footer-contenido">
+
+        <div class="footer-marca">
+
+            <h3>
+                TROYA MAQUINARIAS
+            </h3>
+
+            <p>
+                Compra, venta y reparación de maquinaria agrícola,
+                vial y camiones.
+            </p>
+
+        </div>
+
+
+        <div class="footer-contacto">
+
+            <p>
+                📍 30 de Agosto, Buenos Aires
+            </p>
+
+            <p>
+                📞 02392 407678
+            </p>
+
+            <p>
+                📷 Instagram: @maquinariastroya
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Maquinarias Troya. Todos los derechos reservados.
+        </p>
+
+    </div>
+
 </footer>
+
+
+<script>
+
+function abrirMenu() {
+    document.body.classList.add("menu-abierto");
+}
+
+function cerrarMenu() {
+    document.body.classList.remove("menu-abierto");
+}
+
+</script>
 
 </body>
 </html>
+
