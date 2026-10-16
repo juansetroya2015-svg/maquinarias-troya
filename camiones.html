@@ -1,307 +1,393 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Camiones | Maquinarias Troya</title>
-
-    <meta
-        name="description"
-        content="Camiones disponibles en Maquinarias Troya."
-    >
+    <title>Camiones en venta | Maquinarias Troya</title>
+    <meta name="description" content="Consultá los camiones disponibles en Maquinarias Troya. Fotos, características y precios.">
 
     <link rel="stylesheet" href="estilo.css">
 
+    <style>
+        .catalogo-camiones {
+            max-width: 1200px;
+            margin: auto;
+            padding: 45px 24px 80px;
+        }
+
+        .catalogo-intro {
+            margin-bottom: 30px;
+        }
+
+        .catalogo-intro span {
+            color: #197e7a;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .catalogo-intro h1 {
+            margin: 10px 0;
+            color: #17201c;
+            font-size: clamp(30px, 4vw, 42px);
+        }
+
+        .catalogo-intro p {
+            color: #69736f;
+            line-height: 1.7;
+        }
+
+        .catalogo-contador {
+            margin-bottom: 18px;
+            color: #69736f;
+            font-size: 13px;
+        }
+
+        .grilla-camiones {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .tarjeta-camion {
+            overflow: hidden;
+            border: 1px solid #e1e7e4;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 5px 18px rgba(20, 40, 30, 0.06);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .tarjeta-camion:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 26px rgba(20, 40, 30, 0.12);
+        }
+
+        .tarjeta-camion-imagen {
+            position: relative;
+            height: 225px;
+            overflow: hidden;
+            background: #eef1ef;
+        }
+
+        .tarjeta-camion-imagen img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform .3s ease;
+        }
+
+        .tarjeta-camion:hover .tarjeta-camion-imagen img {
+            transform: scale(1.04);
+        }
+
+        .etiqueta-camion {
+            position: absolute;
+            top: 13px;
+            left: 13px;
+            padding: 7px 10px;
+            border-radius: 5px;
+            background: #197e7a;
+            color: white;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .tarjeta-camion-contenido {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            min-height: 190px;
+        }
+
+        .tarjeta-camion h2 {
+            margin: 0 0 8px;
+            color: #17201c;
+            font-size: 19px;
+            line-height: 1.35;
+        }
+
+        .tarjeta-camion-descripcion {
+            margin: 0 0 14px;
+            color: #69736f;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .tarjeta-camion-precio {
+            margin: 0 0 18px;
+            color: #167b55;
+            font-size: 23px;
+            font-weight: 800;
+        }
+
+        .boton-ficha-camion {
+            display: block;
+            margin-top: auto;
+            padding: 14px 12px;
+            border-radius: 7px;
+            background: #197e7a;
+            color: white;
+            font-size: 13px;
+            font-weight: 800;
+            text-align: center;
+            text-decoration: none;
+            transition: background .2s ease;
+        }
+
+        .boton-ficha-camion:hover {
+            background: #12635f;
+        }
+
+        .catalogo-aviso {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            background: #eef5f1;
+            color: #40534a;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 850px) {
+            .grilla-camiones {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 16px;
+            }
+
+            .tarjeta-camion-imagen {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .catalogo-camiones {
+                padding: 32px 16px 55px;
+            }
+
+            .grilla-camiones {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .tarjeta-camion-imagen {
+                height: 230px;
+            }
+        }
+    </style>
 </head>
 
 <body class="pagina-categoria">
 
-
 <header>
-
     <nav class="encabezado">
+        <button class="boton-menu" onclick="abrirMenu()" aria-label="Abrir menú">☰</button>
 
-        <button
-            class="boton-menu"
-            onclick="abrirMenu()"
-            aria-label="Abrir menú"
-        >
-            ☰
-        </button>
-
-        <a
-            href="index.html"
-            class="logo-encabezado"
-        >
-
-            <img
-                src="Imagenes/portada.png"
-                alt="Maquinarias Troya"
-            >
-
+        <a href="index.html" class="logo-encabezado">
+            <img src="Imagenes/portada.png" alt="Maquinarias Troya">
         </a>
 
-
         <div class="menu-desktop">
-
-            <a href="index.html">
-                Inicio
-            </a>
-
-            <a href="index.html#nosotros">
-                Sobre nosotros
-            </a>
-
-            <a
-                href="index.html#maquinaria"
-                class="activo"
-            >
-                Maquinaria
-            </a>
-
-            <a href="index.html#contacto">
-                Contacto
-            </a>
-
+            <a href="index.html">Inicio</a>
+            <a href="index.html#nosotros">Sobre nosotros</a>
+            <a href="index.html#maquinaria" class="activo">Maquinaria</a>
+            <a href="index.html#contacto">Contacto</a>
         </div>
 
-
-        <div
-            class="fondo-menu"
-            onclick="cerrarMenu()"
-        ></div>
-
+        <div class="fondo-menu" onclick="cerrarMenu()"></div>
 
         <div class="menu-lateral">
-
-            <button
-                class="cerrar-menu"
-                onclick="cerrarMenu()"
-            >
-                ✕
-            </button>
-
-            <a
-                href="index.html"
-                onclick="cerrarMenu()"
-            >
-                Inicio
-            </a>
-
-            <a
-                href="index.html#nosotros"
-                onclick="cerrarMenu()"
-            >
-                Sobre nosotros
-            </a>
-
-            <a
-                href="index.html#maquinaria"
-                onclick="cerrarMenu()"
-            >
-                Maquinaria
-            </a>
-
-            <a
-                href="index.html#contacto"
-                onclick="cerrarMenu()"
-            >
-                Contacto
-            </a>
-
+            <button class="cerrar-menu" onclick="cerrarMenu()">✕</button>
+            <a href="index.html" onclick="cerrarMenu()">Inicio</a>
+            <a href="index.html#nosotros" onclick="cerrarMenu()">Sobre nosotros</a>
+            <a href="index.html#maquinaria" onclick="cerrarMenu()">Maquinaria</a>
+            <a href="index.html#contacto" onclick="cerrarMenu()">Contacto</a>
         </div>
-
     </nav>
-
 </header>
 
-
 <main>
-
     <section class="categoria-portada">
-
         <div class="categoria-portada-contenido">
-
-            <span>
-                TRANSPORTE
-            </span>
-
-            <h1>
-                Camiones
-            </h1>
-
-            <p>
-                Camiones para transporte,
-                trabajo y producción.
-            </p>
-
+            <span>MAQUINARIAS TROYA</span>
+            <h1>Camiones en venta</h1>
+            <p>Encontrá camiones y conjuntos con acoplado disponibles.</p>
         </div>
-
     </section>
 
-
-    <section class="catalogo-maquinas">
-
-        <div class="catalogo-encabezado">
-
-            <div>
-
-                <span class="seccion-kicker">
-                    CATÁLOGO
-                </span>
-
-                <h2>
-                    Camiones disponibles
-                </h2>
-
-            </div>
-
+    <section class="catalogo-camiones">
+        <div class="catalogo-intro">
+            <span>NUESTRO CATÁLOGO</span>
+            <h1>Camiones disponibles</h1>
+            <p>
+                Explorá las unidades publicadas y entrá en cada ficha
+                para ver las fotografías, características y condiciones.
+            </p>
         </div>
 
+        <p class="catalogo-contador">
+             3 unidades publicadas
+        </p>
 
-        <div class="grid-maquinas">
+        <div class="grilla-camiones">
 
-
-            <article class="maquina-card">
-
-                <div class="maquina-imagen">
-
+            <!-- FORD CARGO CON ACOPLADO -->
+            <article class="tarjeta-camion" role="link" tabindex="0" style="cursor: pointer;" onclick="if(!event.target.closest('a,button')) window.location.href='ford-cargo-1722.html'" onkeydown="if((event.key==='Enter'||event.key===' ') && event.target===this){event.preventDefault();window.location.href='ford-cargo-1722.html'}">
+                <div class="tarjeta-camion-imagen">
                     <img
-                        src="Imagenes/camion icono.jpg"
-                        alt="Camión"
+                        src="Imagenes/camion-ford-1722e-1.jpg"
+                        alt="Ford Cargo 1722E año 2010 con acoplado Helvética"
+                        loading="lazy"
                     >
-
+                    <span class="etiqueta-camion">Camión + acoplado</span>
                 </div>
 
+                <div class="tarjeta-camion-contenido">
+                    <h2>Ford Cargo 1722E + Helvética</h2>
 
-                <div class="maquina-info">
+                    <p class="tarjeta-camion-descripcion">
+                        Año 2010 · 650.000 km<br>
+                        Acoplado Helvética año 1998.
+                    </p>
 
-                    <span class="maquina-tipo">
-                        CAMIÓN
-                    </span>
-
-                    <h3>
-                        Camión
-                    </h3>
-
-                    <p>
-                        Consultar modelo y disponibilidad.
+                    <p class="tarjeta-camion-precio">
+                        $75.000.000
                     </p>
 
                     <a
-                        href="https://wa.me/5492392407678"
-                        class="boton-consultar"
+                        href="ford-cargo-1722.html"
+                        class="boton-ficha-camion"
                     >
-                        Consultar por WhatsApp
-                        <span>→</span>
+                        Ver detalles <span>→</span>
                     </a>
-
                 </div>
-
             </article>
+            
+<!-- FORD 1729 -->
+<article class="tarjeta-camion" role="link" tabindex="0" style="cursor: pointer;" onclick="if(!event.target.closest('a,button')) window.location.href='ford-1729.html'" onkeydown="if((event.key==='Enter'||event.key===' ') && event.target===this){event.preventDefault();window.location.href='ford-1729.html'}">
+    <div class="tarjeta-camion-imagen">
+        <img
+            src="Imagenes/ford-1729/ford-1729-1.jpeg"
+            alt="Ford 1729 blanco, cabina panorámica"
+            loading="lazy"
+        >
+        <span class="etiqueta-camion">Camión</span>
+    </div>
+
+    <div class="tarjeta-camion-contenido">
+        <h2>Ford 1729</h2>
+
+        <p class="tarjeta-camion-descripcion">
+            Año 1972 · Cabina panorámica<br>
+            Automático · Motor ajustado · Equipo hidráulico.
+        </p>
+
+        <p class="tarjeta-camion-precio">
+            $80.000.000
+        </p>
+
+        <a
+            href="ford-1729.html"
+            class="boton-ficha-camion"
+        >
+            Ver detalles <span>→</span>
+        </a>
+    </div>
+</article>
+
+<!-- VOLVO FM 370 -->
+<article class="tarjeta-camion" role="link" tabindex="0" style="cursor: pointer;" onclick="if(!event.target.closest('a,button')) window.location.href='volvo-fm-370.html'" onkeydown="if((event.key==='Enter'||event.key===' ') && event.target===this){event.preventDefault();window.location.href='volvo-fm-370.html'}">
+    <div class="tarjeta-camion-imagen">
+        <img
+            src="Imagenes/volvo-fm-370/volvo-fm-370-1.jpeg"
+            alt="Volvo FM 370 año 2014"
+            loading="lazy"
+        >
+        <span class="etiqueta-camion">Camión</span>
+    </div>
+
+    <div class="tarjeta-camion-contenido">
+        <h2>Volvo FM 370</h2>
+
+        <p class="tarjeta-camion-descripcion">
+            Año 2014 · Caja automática · Configuración 6x2.
+        </p>
+
+        <p class="tarjeta-camion-precio">
+            US$ 89.000
+        </p>
+
+        <a
+            href="volvo-fm-370.html"
+            class="boton-ficha-camion"
+        >
+            Ver detalles →
+        </a>
+    </div>
+</article>
 
 
         </div>
 
+        <div class="catalogo-aviso">
+            ¿Buscás otro tipo de camión? Contactanos para consultar
+            por otras unidades y disponibilidad.
+            <a
+                href="https://wa.me/5492392407678?text=Hola%2C%20quisiera%20consultar%20por%20camiones%20disponibles."
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Escribinos por WhatsApp
+            </a>
+        </div>
     </section>
-
 </main>
 
-
-<footer>
-
+<footer id="contacto">
     <div class="footer-contenido">
-
         <div class="footer-marca">
-
-            <img
-                src="Imagenes/portada.png"
-                alt="Troya Maquinarias"
-            >
-
-            <p>
-                Compra, venta y reparación de maquinaria
-                agrícola, vial y camiones.
-            </p>
-
+            <img src="Imagenes/portada.png" alt="Maquinarias Troya">
+            <p>Compra, venta y reparación de maquinaria agrícola, vial y camiones.</p>
         </div>
-
 
         <div class="footer-links">
-
-            <a href="index.html">
-                Inicio
-            </a>
-
-            <a href="index.html#nosotros">
-                Sobre nosotros
-            </a>
-
-            <a href="index.html#maquinaria">
-                Maquinaria
-            </a>
-
-            <a href="index.html#contacto">
-                Contacto
-            </a>
-
+            <a href="index.html">Inicio</a>
+            <a href="index.html#nosotros">Sobre nosotros</a>
+            <a href="index.html#maquinaria">Maquinaria</a>
+            <a href="index.html#contacto">Contacto</a>
         </div>
 
+        
+<div class="footer-contacto">
+    <p>📍 30 de Agosto, Buenos Aires</p>
+    <p>📞 02392 407678</p>
 
-        <div class="footer-contacto">
+    <a href="https://www.instagram.com/maquinariastroya/"
+       target="_blank" rel="noopener noreferrer">Instagram</a>
 
-            <p>
-                📍 30 de Agosto, Buenos Aires
-            </p>
-
-            <p>
-                📞 02392 407678
-            </p>
-
-            <a
-                href="https://www.instagram.com/maquinariastroya/"
-                target="_blank"
-            >
-                Instagram
-            </a>
-
-        </div>
-
-    </div>
+    <a href="https://www.facebook.com/bartolo.troya"
+       target="_blank" rel="noopener noreferrer">Facebook</a>
+</div>
 
 
     <div class="footer-bottom">
-
-        <span>
-            © 2026 Maquinarias Troya.
-            Todos los derechos reservados.
-        </span>
-
-        <span>
-            Maquinaria agrícola, vial y transporte.
-        </span>
-
+        <span>© 2026 Maquinarias Troya. Todos los derechos reservados.</span>
+        <span>Maquinaria agrícola, vial y camiones.</span>
     </div>
-
 </footer>
 
-
 <script>
+    function abrirMenu() {
+        document.body.classList.add("menu-abierto");
+    }
 
-function abrirMenu() {
-    document.body.classList.add("menu-abierto");
-}
-
-function cerrarMenu() {
-    document.body.classList.remove("menu-abierto");
-}
-
+    function cerrarMenu() {
+        document.body.classList.remove("menu-abierto");
+    }
 </script>
 
 </body>

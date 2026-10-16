@@ -400,6 +400,11 @@ header {
 .link-catalogo span {
     font-size:18px;
 }
+/* Acercar la sección de maquinaria a la portada */
+#maquinaria {
+    padding-top: 35px;
+    margin-top: 0;
+}
 
 
 /* =========================
@@ -555,8 +560,9 @@ header {
 ========================= */
 
 .destacadas {
-    background:#f6f8f7;
-    padding-bottom:80px;
+    background: #f6f8f7;
+    padding-top: 35px;
+    padding-bottom: 40px;
 }
 
 .productos {
@@ -875,28 +881,35 @@ footer {
     gap:14px;
 }
 
+
 .footer-links a,
 .footer-contacto a {
-    color:rgba(255,255,255,.72);
-    font-size:12px;
-    transition:.2s ease;
+    color: rgba(255, 255, 255, .78);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color .2s ease, transform .2s ease;
+    width: fit-content;
 }
 
 .footer-links a:hover,
 .footer-contacto a:hover {
-    color:#f4c72e;
+    color: #f4c72e;
+    transform: translateX(3px);
 }
 
 .footer-contacto {
-    display:flex;
-    flex-direction:column;
-    gap:13px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
 }
 
 .footer-contacto p {
-    color:rgba(255,255,255,.65);
-    font-size:12px;
+    color: rgba(255, 255, 255, .68);
+    font-size: 12px;
+    margin: 0;
 }
+
 
 .footer-bottom {
     max-width:1180px;
@@ -1085,17 +1098,22 @@ footer {
     background:#eef1ef;
 }
 
+
 .maquina-imagen img {
-    width:100%;
-    height:100%;
-    display:block;
-    object-fit:cover;
-    transition:transform .5s ease;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center 40%;
+    transition: transform .5s ease;
 }
 
+
+
 .maquina-card:hover .maquina-imagen img {
-    transform:scale(1.04);
+    transform: scale(1.01);
 }
+
 
 .maquina-info {
     padding:25px 25px 27px;
@@ -1759,5 +1777,513 @@ footer {
     .categoria-nombre {
         font-size:22px;
     }
+    
+    .categoria-nombre {
+        font-size:22px;
+    }
 
 }
+
+/* CATEGORÍAS: diseño compacto */
+.categorias-iconos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 28px;
+  align-items: stretch;
+}
+
+.categorias-iconos .categoria-icono {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  padding: 14px 16px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #e8e5df;
+  border-radius: 8px;
+  color: #173b2b;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.categorias-iconos .categoria-icono:hover {
+  border-color: #8b6b45;
+  background: #faf8f4;
+}
+
+.categorias-iconos .icono-lineal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  color: #8b6b45;
+  font-size: 22px;
+}
+
+.categorias-iconos .categorias-ocultas {
+  display: contents;
+}
+
+.categorias-iconos .categorias-ocultas[hidden] {
+  display: none;
+}
+
+.categorias-iconos .boton-categorias {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 12px;
+  padding: 12px 22px;
+  border: 1px solid #173b2b;
+  border-radius: 6px;
+  background: #173b2b;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.categorias-iconos .boton-categorias:hover {
+  background: #24543e;
+}
+
+@media (min-width: 1100px) {
+  .categorias-iconos {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .categorias-iconos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .categorias-iconos .categoria-icono {
+    padding: 12px 10px;
+    font-size: 14px;
+  }
+}
+
+/* CORRECCIÓN DEFINITIVA DE CATEGORÍAS */
+.categorias.categorias-iconos {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: auto;
+    grid-template-areas: none;
+    gap: 14px;
+    margin-top: 28px;
+    align-items: stretch;
+}
+
+.categorias.categorias-iconos .categoria-icono {
+    grid-area: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 64px;
+    padding: 12px;
+    border: 1px solid #e8e5df;
+    border-radius: 8px;
+    background: #fff;
+    color: #173b2b;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.categorias.categorias-iconos .categorias-ocultas {
+    display: contents;
+}
+
+.categorias.categorias-iconos .categorias-ocultas[hidden] {
+    display: none;
+}
+
+.categorias.categorias-iconos .icono-lineal {
+    flex-shrink: 0;
+    color: #8b6b45;
+    font-size: 21px;
+}
+
+.boton-categorias-contenedor {
+    display: flex;
+    justify-content: center;
+    margin: 24px 0 0;
+}
+
+.boton-categorias {
+    padding: 12px 22px;
+    border: 0;
+    border-radius: 6px;
+    background: #173b2b;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+@media (max-width: 900px) {
+    .categorias.categorias-iconos {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .categorias.categorias-iconos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+}
+
+
+/* CATEGORÍAS: TARJETAS E ICONOS */
+.categorias.categorias-iconos .categoria-icono {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 78px;
+    padding: 16px 18px;
+    border: 1px solid #e6e2da;
+    border-radius: 9px;
+    background: #fff;
+    color: #173b2b;
+    font-size: 15px;
+    font-weight: 500;
+    transition: border-color .2s ease, background .2s ease;
+}
+
+.categorias.categorias-iconos .icono-lineal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    color: #956b3c;
+    font-size: 23px;
+}
+
+.categorias.categorias-iconos .categoria-icono i {
+    line-height: 1;
+}
+
+.categorias.categorias-iconos .categoria-icono:hover {
+    border-color: #b18a59;
+    background: #fcfaf6;
+}
+
+.categorias.categorias-iconos .categoria-icono:hover .icono-lineal {
+    color: #173b2b;
+}
+
+@media (max-width: 600px) {
+    .categorias.categorias-iconos .categoria-icono {
+        min-height: 70px;
+        padding: 12px 10px;
+        gap: 8px;
+        font-size: 13px;
+    }
+
+    .categorias.categorias-iconos .icono-lineal {
+        flex-basis: 28px;
+        width: 28px;
+        height: 28px;
+        font-size: 20px;
+    }
+}
+
+/* CATEGORÍAS ESTILO RASTRO AGRO */
+.categorias.categorias-iconos {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: auto;
+    grid-template-areas: none;
+    gap: 28px 18px;
+    align-items: start;
+}
+
+.categorias.categorias-iconos .categoria-icono {
+    grid-area: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    min-height: 120px;
+    padding: 10px 6px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #16452c;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.categorias.categorias-iconos .categoria-icono:hover {
+    border: 0;
+    background: transparent;
+}
+
+.categorias.categorias-iconos .icono-lineal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    color: #a47759;
+    font-size: 52px;
+}
+
+.categorias.categorias-iconos .icono-lineal svg {
+    width: 76px;
+    height: 66px;
+    overflow: visible;
+}
+
+.categorias.categorias-iconos .categoria-icono:hover .icono-lineal {
+    color: #80583d;
+}
+
+.categorias.categorias-iconos .categorias-ocultas {
+    display: contents;
+}
+
+.categorias.categorias-iconos .categorias-ocultas[hidden] {
+    display: none;
+}
+
+.categorias.categorias-iconos .boton-categorias {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 8px;
+}
+
+@media (max-width: 900px) {
+    .categorias.categorias-iconos {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .categorias.categorias-iconos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 12px;
+    }
+
+    .categorias.categorias-iconos .icono-lineal {
+        height: 60px;
+    }
+
+    .categorias.categorias-iconos .icono-lineal svg {
+        width: 64px;
+        height: 56px;
+    }
+}
+
+.categorias.categorias-iconos .imagen-categoria {
+    display: block;
+    width: 80px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.categoria-icono .icono-lineal img {
+    width: 100%;
+    max-width: 130px;
+    height: 90px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+/* Ajustar espacios internos de máquinas destacadas */
+.destacadas > .contenido {
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+
+.destacadas .seccion-encabezado {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.destacadas {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+/* Aviso de stock debajo del botón de WhatsApp */
+.aviso-stock {
+    margin-top: 15px;
+    padding: 18px 20px;
+    background: #edf7f3;
+    border-left: 5px solid #16875b;
+    border-radius: 7px;
+    color: #252b2d;
+    line-height: 1.7;
+}
+
+.aviso-stock-titulo {
+    margin-bottom: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #15191b;
+}
+
+.aviso-stock p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.aviso-stock-ubicacion {
+    margin: 10px 0 0;
+    color: #737b7d;
+    font-size: 11px;
+    text-align: center;
+}
+/* PRECIO DE PULVERIZADORAS */
+.maquina-info .tarjeta-pulverizadora-precio {
+    margin: 0 0 22px;
+    color: #168454;
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+.boton-ficha-camion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 14px 20px;
+    background-color: #197f7b;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 7px;
+    border: 1px solid #08766f;
+    transition: background-color 0.2s ease;
+}
+
+.boton-ficha-camion:hover {
+    background-color: #126d69;
+    color: #ffffff;
+}
+
+.maquina-card .tarjeta-semirremolque-precio {
+    margin: 0 0 22px;
+    color: #168454;
+    font-size: 24px;
+    line-height: 1.3;
+    font-weight: 800;
+}
+
+.precio-maquina {
+    color: #168454;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0 0 22px;
+}
+
+.maquina-info .precio-maquina {
+    margin: 0 0 18px;
+    color: #167b55;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+/* =========================
+   CATÁLOGO SIN UNIDADES PUBLICADAS
+========================= */
+
+.catalogo-vacio {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 52px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #f6f8f7;
+    border: 1px solid #e1e8e4;
+    border-radius: 14px;
+}
+
+.catalogo-vacio-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background: #e4efeb;
+    font-size: 32px;
+}
+
+.catalogo-vacio h3 {
+    margin: 0 0 12px;
+    color: #17201c;
+    font-size: 27px;
+    line-height: 1.2;
+}
+
+.catalogo-vacio p {
+    max-width: 570px;
+    margin: 0 0 25px;
+    color: #69736f;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.catalogo-vacio .boton-consultar {
+    width: auto;
+    min-width: 240px;
+    justify-content: center;
+    gap: 14px;
+    padding: 14px 20px;
+    border-radius: 7px;
+}
+
+@media (max-width: 600px) {
+    .catalogo-vacio {
+        padding: 35px 20px;
+    }
+
+    .catalogo-vacio h3 {
+        font-size: 23px;
+    }
+
+    .catalogo-vacio p {
+        font-size: 14px;
+    }
+
+    .catalogo-vacio .boton-consultar {
+        width: 100%;
+    }
+}
+
+.ford-precio .precio-anterior {
+    display: block;
+    margin-top: 6px;
+    color: #888;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: line-through;
+}
+
+.ford-precio strong {
+    display: block;
+    color: #17201c;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+

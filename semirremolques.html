@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Semirremolques | Maquinarias Troya</title>
+
+    <meta
+        name="description"
+        content="Semirremolques disponibles en Maquinarias Troya."
+    >
+
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body class="pagina-categoria">
+
+    <!-- HEADER -->
+    <header>
+        <nav class="encabezado">
+
+            <button
+                class="boton-menu"
+                onclick="abrirMenu()"
+                aria-label="Abrir menú"
+            >
+                ☰
+            </button>
+
+            <a href="index.html" class="logo-encabezado">
+                <img src="Imagenes/portada.png" alt="Maquinarias Troya">
+            </a>
+
+            <div class="menu-desktop">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#nosotros">Sobre nosotros</a>
+                <a href="index.html#maquinaria" class="activo">Maquinaria</a>
+                <a href="index.html#contacto">Contacto</a>
+            </div>
+
+            <div class="fondo-menu"></div>
+
+            <div class="menu-lateral">
+                <button class="cerrar-menu" onclick="cerrarMenu()">✕</button>
+                <a href="index.html" onclick="cerrarMenu()">Inicio</a>
+                <a href="index.html#nosotros" onclick="cerrarMenu()">Sobre nosotros</a>
+                <a href="index.html#maquinaria" onclick="cerrarMenu()">Maquinaria</a>
+                <a href="index.html#contacto" onclick="cerrarMenu()">Contacto</a>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- PORTADA -->
+    <main>
+
+        <section class="categoria-portada">
+            <div class="categoria-portada-contenido">
+
+                <span>TRANSPORTE</span>
+
+                <h1>Semirremolques</h1>
+
+                <p>
+                    Semirremolques para distintas necesidades
+                    de carga y transporte.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- CATÁLOGO -->
+        <section class="catalogo-maquinas">
+
+            <div class="catalogo-encabezado">
+                <div>
+                    <span class="seccion-kicker">CATÁLOGO</span>
+                    <h2>Semirremolques disponibles</h2>
+                </div>
+            </div>
+
+            <div class="grid-maquinas">
+
+                <article class="maquina-card" role="link" tabindex="0" style="cursor: pointer;" onclick="if(!event.target.closest('a,button')) window.location.href='semirremolque-dipolvare.html'" onkeydown="if((event.key==='Enter'||event.key===' ') && event.target===this){event.preventDefault();window.location.href='semirremolque-dipolvare.html'}">
+
+    <div class="maquina-imagen">
+        <img
+            src="Imagenes/semirremolque-dipolvare/semirremolque-dipolvare-1.jpeg"
+            alt="Semirremolque tanque Dipolvare"
+            loading="lazy"
+        >
+    </div>
+
+    <div class="maquina-info">
+
+        <span class="maquina-tipo">
+            SEMIRREMOLQUE TANQUE
+        </span>
+
+        <h3>
+            Dipolvare
+        </h3>
+
+        <p>
+            Usado · Disponible en 30 de Agosto,
+            Buenos Aires.
+        </p>
+
+        <p class="precio-maquina">
+            $70.000.000
+        </p>
+
+        <a
+    href="semirremolque-dipolvare.html"
+    class="boton-ficha-camion"
+>
+    Ver ficha <span>→</span>
+</a>
+
+    </div>
+
+</article>
+                    
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-contenido">
+
+            <div class="footer-marca">
+                <img src="Imagenes/portada.png" alt="Maquinarias Troya">
+
+                <p>
+                    Compra, venta y reparación de maquinaria
+                    agrícola, vial y camiones.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#nosotros">Sobre nosotros</a>
+                <a href="index.html#maquinaria">Maquinaria</a>
+                <a href="index.html#contacto">Contacto</a>
+            </div>
+
+            <div class="footer-contacto">
+                <p>📍 30 de Agosto, Buenos Aires</p>
+                <p>📞 02392 407678</p>
+
+                <a
+                    href="https://www.instagram.com/maquinariastroya/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Instagram
+                </a>
+
+                <a
+                    href="https://www.facebook.com/bartolo.troya"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Facebook
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>
+                © 2026 Maquinarias Troya.
+                Todos los derechos reservados.
+            </span>
+
+            <span>Maquinaria agrícola, vial y transporte.</span>
+        </div>
+
+    </footer>
+
+    <script>
+        function abrirMenu() {
+            document.body.classList.add("menu-abierto");
+        }
+
+        function cerrarMenu() {
+            document.body.classList.remove("menu-abierto");
+        }
+    </script>
+
+</body>
+</html>

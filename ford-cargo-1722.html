@@ -1,0 +1,608 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ford Cargo 1722E + Acoplado Helvética | Maquinarias Troya</title>
+    <meta name="description" content="Ford Cargo 1722E año 2010 con acoplado Helvética año 1998. Consultá precio y disponibilidad en Maquinarias Troya.">
+
+    <link rel="stylesheet" href="estilo.css">
+
+    <style>
+        
+/* VISOR DE FOTOS AMPLIADAS */
+.visor-foto {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(0, 0, 0, 0.92);
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.visor-foto.abierto {
+    display: flex;
+}
+
+.visor-foto img {
+    display: block;
+    max-width: 95%;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    cursor: zoom-out;
+}
+
+.visor-cerrar {
+    position: absolute;
+    top: 18px;
+    right: 25px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+@media (max-width: 520px) {
+    .visor-foto {
+        padding: 10px;
+    }
+
+    .visor-foto img {
+        max-width: 100%;
+        max-height: 85vh;
+    }
+}
+
+        .ficha-unidad {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 45px 25px 80px;
+        }
+
+        .ficha-volver {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #197E7A;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* DISTRIBUCIÓN PRINCIPAL */
+        .ficha-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(320px, .8fr);
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* GALERÍA ÚNICA */
+        .ficha-galeria {
+            min-width: 0;
+        }
+
+        .galeria-principal {
+            width: 100%;
+            height: 430px;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #eef1ef;
+        }
+
+        .galeria-principal img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            cursor: zoom-in;
+        }
+
+        .galeria-miniaturas {
+            display: grid;
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .galeria-miniaturas button {
+            min-width: 0;
+            height: 76px;
+            padding: 0;
+            overflow: hidden;
+            border: 2px solid transparent;
+            border-radius: 7px;
+            background: #eef1ef;
+            cursor: pointer;
+        }
+
+        .galeria-miniaturas button:hover,
+        .galeria-miniaturas button.activa {
+            border-color: #197E7A;
+        }
+
+        .galeria-miniaturas img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* INFORMACIÓN */
+        .ficha-etiqueta {
+            display: inline-block;
+            margin-bottom: 13px;
+            padding: 7px 11px;
+            border-radius: 4px;
+            background: #e8f3ef;
+            color: #167b6e;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .ficha-datos h1 {
+            margin: 0 0 12px;
+            color: #17201c;
+            font-size: 36px;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .ficha-subtitulo {
+            margin-bottom: 25px;
+            color: #69736f;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .ficha-precio {
+            padding: 22px 0;
+            margin-bottom: 22px;
+            border-top: 1px solid #e2e7e5;
+            border-bottom: 1px solid #e2e7e5;
+        }
+
+        .ficha-precio small {
+            display: block;
+            margin-bottom: 7px;
+            color: #7b8581;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ficha-precio strong {
+            color: #102c25;
+            font-size: 32px;
+            letter-spacing: -1px;
+        }
+
+        .ficha-precio p {
+            margin-top: 8px;
+            color: #69736f;
+            font-size: 13px;
+        }
+
+        .ficha-boton {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 20px;
+            padding: 16px;
+            border-radius: 7px;
+            background: #168454;
+            color: white;
+            font-size: 14px;
+            font-weight: 800;
+            transition: background .2s ease, transform .2s ease;
+        }
+
+        .ficha-boton:hover {
+            background: #106b43;
+            transform: translateY(-2px);
+        }
+
+        .ficha-nota {
+            margin-top: 12px;
+            color: #7b8581;
+            font-size: 11px;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        /* CARACTERÍSTICAS */
+        .ficha-caracteristicas {
+            margin-top: 55px;
+        }
+
+        .ficha-caracteristicas h2 {
+            margin-bottom: 10px;
+            color: #17201c;
+            font-size: 28px;
+        }
+
+        .ficha-caracteristicas > p {
+            margin-bottom: 25px;
+            color: #69736f;
+            font-size: 14px;
+        }
+
+        .ficha-tabla {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .ficha-panel {
+            padding: 25px;
+            border: 1px solid #e2e7e5;
+            border-radius: 10px;
+            background: white;
+        }
+
+        .ficha-panel h3 {
+            margin-bottom: 18px;
+            color: #167b6e;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .ficha-fila {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 12px 0;
+            border-bottom: 1px solid #edf0ee;
+            font-size: 13px;
+        }
+
+        .ficha-fila:last-child {
+            border-bottom: none;
+        }
+
+        .ficha-fila span {
+            color: #7b8581;
+        }
+
+        .ficha-fila strong {
+            color: #17201c;
+            text-align: right;
+        }
+
+        /* TABLET */
+        @media (max-width: 900px) {
+            .ficha-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .galeria-principal {
+                height: 380px;
+            }
+
+            .ficha-datos h1 {
+                font-size: 32px;
+            }
+        }
+
+        /* CELULAR */
+        @media (max-width: 520px) {
+            .ficha-unidad {
+                padding: 35px 16px 60px;
+            }
+
+            .galeria-principal {
+                height: 270px;
+            }
+
+            .galeria-miniaturas {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+                gap: 7px;
+            }
+
+            .galeria-miniaturas button {
+                height: 70px;
+            }
+
+            .ficha-tabla {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .ficha-panel {
+                padding: 20px 16px;
+            }
+
+            .ficha-precio strong {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body class="pagina-categoria">
+
+<header>
+    <nav class="encabezado">
+        <button class="boton-menu" onclick="abrirMenu()" aria-label="Abrir menú">☰</button>
+
+        <a href="index.html" class="logo-encabezado">
+            <img src="Imagenes/portada.png" alt="Maquinarias Troya">
+        </a>
+
+        <div class="menu-desktop">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#nosotros">Sobre nosotros</a>
+            <a href="index.html#maquinaria" class="activo">Maquinaria</a>
+            <a href="index.html#contacto">Contacto</a>
+        </div>
+
+        <div class="fondo-menu" onclick="cerrarMenu()"></div>
+
+        <div class="menu-lateral">
+            <button class="cerrar-menu" onclick="cerrarMenu()">✕</button>
+            <a href="index.html" onclick="cerrarMenu()">Inicio</a>
+            <a href="index.html#nosotros" onclick="cerrarMenu()">Sobre nosotros</a>
+            <a href="index.html#maquinaria" onclick="cerrarMenu()">Maquinaria</a>
+            <a href="index.html#contacto" onclick="cerrarMenu()">Contacto</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="categoria-portada">
+        <div class="categoria-portada-contenido">
+            <span>MAQUINARIAS TROYA</span>
+            <h1>Camiones</h1>
+            <p>Unidades seleccionadas para trabajar.</p>
+        </div>
+    </section>
+
+    <section class="ficha-unidad">
+
+        <a href="index.html#maquinaria" class="ficha-volver">← Volver a maquinaria</a>
+
+        <div class="ficha-grid">
+
+            <!-- FOTO PRINCIPAL Y LAS SIETE MINIATURAS -->
+            <div class="ficha-galeria">
+
+                <div class="galeria-principal">
+                    <img
+                        id="fotoPrincipal"
+                        src="Imagenes/camion-ford-1722e-1.jpg"
+                        alt="Ford Cargo 1722E con acoplado Helvética"
+                    >
+                </div>
+
+                <div class="galeria-miniaturas">
+
+                    <button type="button" class="activa"
+                        onclick="cambiarFoto('Imagenes/camion-ford-1722e-1.jpg', this)">
+                        <img src="Imagenes/camion-ford-1722e-1.jpg" alt="Camión vista 1">
+                    </button>
+
+                    <button type="button"
+                        onclick="cambiarFoto('Imagenes/camion-ford-1722e-2.jpg', this)">
+                        <img src="Imagenes/camion-ford-1722e-2.jpg" alt="Camión vista 2">
+                    </button>
+
+                    <button type="button"
+                        onclick="cambiarFoto('Imagenes/camion-ford-1722e-3.jpg', this)">
+                        <img src="Imagenes/camion-ford-1722e-3.jpg" alt="Camión vista 3">
+                    </button>
+
+                    <button type="button"
+                        onclick="cambiarFoto('Imagenes/acoplado-helvetica-1.jpg', this)">
+                        <img src="Imagenes/acoplado-helvetica-1.jpg" alt="Acoplado vista 1">
+                    </button>
+
+                    <button type="button"
+                        onclick="cambiarFoto('Imagenes/acoplado-helvetica-2.jpg', this)">
+                        <img src="Imagenes/acoplado-helvetica-2.jpg" alt="Acoplado vista 2">
+                    </button>
+
+                    <button type="button"
+                        onclick="cambiarFoto('Imagenes/acoplado-helvetica-3.jpg', this)">
+                        <img src="Imagenes/acoplado-helvetica-3.jpg" alt="Acoplado vista 3">
+                    </button>
+
+                    <button type="button"
+                        onclick="cambiarFoto('Imagenes/acoplado-helvetica-4.jpg', this)">
+                        <img src="Imagenes/acoplado-helvetica-4.jpg" alt="Acoplado vista 4">
+                    </button>
+
+                </div>
+            </div>
+
+            <!-- PRECIO E INFORMACIÓN -->
+            <div class="ficha-datos">
+                <span class="ficha-etiqueta">CAMIÓN + ACOPLADO</span>
+
+                <h1>Ford Cargo 1722E + Helvética</h1>
+
+                <p class="ficha-subtitulo">
+                    Ford Cargo año 2010 con acoplado Helvética año 1998.
+                    Un conjunto para transporte y trabajo.
+                </p>
+
+                
+<div class="ford-precio">
+
+    <small>Precio del conjunto</small>
+
+    <del class="precio-anterior">$75.000.000</del>
+
+    <strong>$70.000.000</strong>
+
+    <p>Entrega y cheques. Consultar condiciones.</p>
+
+</div>
+
+
+                <a
+                    class="ficha-boton"
+                    href="https://wa.me/5492392407678?text=Hola%20Maquinarias%20Troya%2C%20consulto%20por%20el%20Ford%20Cargo%201722E%20con%20acoplado%20Helv%C3%A9tica."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Consultar por WhatsApp <span>→</span>
+                </a>
+                
+<div class="aviso-stock">
+    <div class="aviso-stock-titulo">
+        🚜 ¡Tenemos mucho más para ofrecerte!
+    </div>
+
+    <p>
+        No todo nuestro stock está publicado en la web. Si estás buscando
+        una máquina, un camión o algún equipo en particular, consultanos
+        por WhatsApp. ¡Te ayudamos a encontrar lo que necesitás!
+    </p>
+</div>
+
+<p class="aviso-stock-ubicacion">
+    Maquinarias Troya · 30 de Agosto, Buenos Aires
+</p>
+
+                
+            </div>
+
+        </div>
+
+        <!-- CARACTERÍSTICAS -->
+        <section class="ficha-caracteristicas">
+            <h2>Características del conjunto</h2>
+            <p>Consultá para ampliar detalles y coordinar una visita.</p>
+
+            <div class="ficha-tabla">
+
+                <div class="ficha-panel">
+                    <h3>CAMIÓN · FORD CARGO 1722E</h3>
+
+                    <div class="ficha-fila"><span>Marca</span><strong>Ford</strong></div>
+                    <div class="ficha-fila"><span>Modelo</span><strong>Cargo 1722E</strong></div>
+                    <div class="ficha-fila"><span>Año</span><strong>2010</strong></div>
+                    <div class="ficha-fila"><span>Kilometraje</span><strong>650.000 km</strong></div>
+                    <div class="ficha-fila"><span>Motor informado</span><strong>Humming</strong></div>
+                    <div class="ficha-fila"><span>Configuración</span><strong>4x2</strong></div>
+                    <div class="ficha-fila"><span>Capacidad informada</span><strong>45 toneladas</strong></div>
+                    <div class="ficha-fila"><span>Vigía de ruedas</span><strong>Sí</strong></div>
+                    <div class="ficha-fila"><span>Carrocería</span><strong>Reparada</strong></div>
+                    <div class="ficha-fila"><span>Lona</span><strong>Nueva</strong></div>
+                    <div class="ficha-fila"><span>Estado</span><strong>Bueno, listo para trabajar</strong></div>
+                </div>
+
+                <div class="ficha-panel">
+                    <h3>ACOPLADO · HELVÉTICA</h3>
+
+                    <div class="ficha-fila"><span>Marca</span><strong>Helvética</strong></div>
+                    <div class="ficha-fila"><span>Año</span><strong>1998</strong></div>
+                    <div class="ficha-fila"><span>Tipo</span><strong>Baranda volcable</strong></div>
+                    <div class="ficha-fila"><span>Medidas</span><strong>9 × 2,60 m</strong></div>
+                    <div class="ficha-fila"><span>Equipamiento</span><strong>Lona y freno de aire</strong></div>
+                    <div class="ficha-fila"><span>Largo total informado</span><strong>18,50 m</strong></div>
+                </div>
+
+            </div>
+        </section>
+
+    </section>
+</main>
+
+<footer id="contacto">
+    <div class="footer-contenido">
+
+        <div class="footer-marca">
+            <img src="Imagenes/portada.png" alt="Troya Maquinarias">
+            <p>Compra, venta y reparación de maquinaria agrícola, vial y camiones.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#nosotros">Sobre nosotros</a>
+            <a href="index.html#maquinaria">Maquinaria</a>
+            <a href="index.html#contacto">Contacto</a>
+        </div>
+
+        
+<div class="footer-contacto">
+    <p>📍 30 de Agosto, Buenos Aires</p>
+    <p>📞 02392 407678</p>
+
+    <a href="https://www.instagram.com/maquinariastroya/"
+       target="_blank" rel="noopener noreferrer">Instagram</a>
+
+    <a href="https://www.facebook.com/bartolo.troya"
+       target="_blank" rel="noopener noreferrer">Facebook</a>
+</div>
+
+
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2026 Maquinarias Troya. Todos los derechos reservados.</span>
+        <span>Maquinaria agrícola, vial y camiones.</span>
+    </div>
+</footer>
+
+<div class="visor-foto" id="visorFoto" onclick="cerrarVisor()">
+    <button class="visor-cerrar" type="button" aria-label="Cerrar imagen" onclick="event.stopPropagation(); cerrarVisor()">×</button>
+    <img id="imagenAmpliada" src="" alt="Foto ampliada" onclick="event.stopPropagation()">
+</div>
+
+
+<script>
+    function abrirMenu() {
+        document.body.classList.add("menu-abierto");
+    }
+
+    function cerrarMenu() {
+        document.body.classList.remove("menu-abierto");
+    }
+
+    
+function cambiarFoto(ruta, boton) {
+    document.getElementById("fotoPrincipal").src = ruta;
+
+    document.querySelectorAll(".galeria-miniaturas button").forEach(function(item) {
+        item.classList.remove("activa");
+    });
+
+    boton.classList.add("activa");
+}
+
+function abrirVisor() {
+    const foto = document.getElementById("fotoPrincipal").src;
+    document.getElementById("imagenAmpliada").src = foto;
+    document.getElementById("visorFoto").classList.add("abierto");
+    document.body.style.overflow = "hidden";
+}
+
+function cerrarVisor() {
+    document.getElementById("visorFoto").classList.remove("abierto");
+    document.body.style.overflow = "";
+}
+
+document.getElementById("fotoPrincipal").addEventListener("click", abrirVisor);
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        cerrarVisor();
+    }
+});
+
+</script>
+
+</body>
+</html>

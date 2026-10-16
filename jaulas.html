@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaulas en venta | Maquinarias Troya</title>
+    <meta name="description" content="Consultá las jaulas disponibles en Maquinarias Troya.">
+    <link rel="stylesheet" href="estilo.css">
+
+    <style>
+        .catalogo-jaulas {
+            max-width: 1200px;
+            margin: auto;
+            padding: 45px 24px 80px;
+        }
+
+        .catalogo-jaulas-intro {
+            margin-bottom: 30px;
+        }
+
+        .catalogo-jaulas-intro span {
+            color: #197e7a;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .catalogo-jaulas-intro h2 {
+            margin: 10px 0;
+            color: #17201c;
+            font-size: clamp(30px, 4vw, 42px);
+        }
+
+        .catalogo-jaulas-intro p {
+            color: #69736f;
+            line-height: 1.7;
+        }
+
+        .jaulas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 340px));
+            gap: 25px;
+            align-items: start;
+        }
+
+        .jaula-card .maquina-imagen {
+            overflow: hidden;
+        }
+
+        .jaula-card .maquina-imagen img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .jaula-card .maquina-info p {
+            line-height: 1.65;
+        }
+
+        @media (max-width: 540px) {
+            .catalogo-jaulas {
+                padding: 32px 16px 55px;
+            }
+
+            .jaulas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .jaula-card .maquina-imagen img {
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body class="pagina-categoria">
+    <header>
+        <nav class="encabezado">
+            <button class="boton-menu" onclick="abrirMenu()" aria-label="Abrir menú">☰</button>
+
+            <a href="index.html" class="logo-encabezado">
+                <img src="Imagenes/portada.png" alt="Maquinarias Troya">
+            </a>
+
+            <div class="menu-desktop">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#nosotros">Sobre nosotros</a>
+                <a href="index.html#maquinaria" class="activo">Maquinaria</a>
+                <a href="index.html#contacto">Contacto</a>
+            </div>
+
+            <div class="fondo-menu" onclick="cerrarMenu()"></div>
+
+            <div class="menu-lateral">
+                <button class="cerrar-menu" onclick="cerrarMenu()">✕</button>
+                <a href="index.html" onclick="cerrarMenu()">Inicio</a>
+                <a href="index.html#nosotros" onclick="cerrarMenu()">Sobre nosotros</a>
+                <a href="index.html#maquinaria" onclick="cerrarMenu()">Maquinaria</a>
+                <a href="index.html#contacto" onclick="cerrarMenu()">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="categoria-portada">
+            <div class="categoria-portada-contenido">
+                <span>MAQUINARIAS TROYA</span>
+                <h1>Jaulas en venta</h1>
+                <p>Consultá por jaulas ganaderas disponibles.</p>
+            </div>
+        </section>
+
+        <section class="catalogo-jaulas">
+            <div class="catalogo-jaulas-intro">
+                <span>NUESTRO CATÁLOGO</span>
+                <h2>Jaulas disponibles</h2>
+                <p>Conocé las jaulas disponibles, sus características y precios.</p>
+            </div>
+
+            <div class="jaulas-grid">
+                <article class="maquina-card jaula-card" role="link" tabindex="0" style="cursor: pointer;" onclick="if(!event.target.closest('a,button')) window.location.href='semijaula-hermann-2014-final.html'" onkeydown="if((event.key==='Enter'||event.key===' ') && event.target===this){event.preventDefault();window.location.href='semijaula-hermann-2014-final.html'}">
+                    <div class="maquina-imagen">
+                        <img src="Imagenes/jaulas/semijaula-hermann-1.jpg"
+                             alt="Semijaula Hermann 2014 doble piso, vista trasera"
+                             loading="lazy">
+                    </div>
+                    <div class="maquina-info">
+                        <span class="maquina-tipo">SEMIJAULA · HERMANN</span>
+                        <h3>Semijaula Hermann doble piso</h3>
+                        <p>Año 2014 · Largo aproximado de 15,70 m · Rampa manual.</p>
+                        <p class="precio-maquina">$52.000.000</p>
+                        <a href="semijaula-hermann-2014-final.html" class="boton-consultar">
+                            Ver detalles <span>→</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto">
+        <div class="footer-contenido">
+            <div class="footer-marca">
+                <img src="Imagenes/portada.png" alt="Maquinarias Troya">
+                <p>Compra, venta y reparación de maquinaria agrícola, vial y camiones.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#nosotros">Sobre nosotros</a>
+                <a href="index.html#maquinaria">Maquinaria</a>
+                <a href="index.html#contacto">Contacto</a>
+            </div>
+
+            <div class="footer-contacto">
+                <p>📍 30 de Agosto, Buenos Aires</p>
+                <p>📞 02392 407678</p>
+                <a href="https://www.instagram.com/maquinariastroya/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.facebook.com/bartolo.troya" target="_blank" rel="noopener noreferrer">Facebook</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Maquinarias Troya. Todos los derechos reservados.</span>
+            <span>Maquinaria agrícola, vial y camiones.</span>
+        </div>
+    </footer>
+
+    <script>
+        function abrirMenu() {
+            document.body.classList.add("menu-abierto");
+        }
+
+        function cerrarMenu() {
+            document.body.classList.remove("menu-abierto");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embolsadora Ascanelli GRUB 5 pies | Maquinarias Troya</title>
+    <meta name="description" content="Embolsadora Ascanelli GRUB de 5 pies, año 2024, prácticamente sin uso. Precio: US$ 15.000.">
+    <link rel="stylesheet" href="estilo.css">
+
+    <style>
+        .maquina-ficha {
+            max-width: 1250px;
+            margin: auto;
+            padding: 40px 25px 70px;
+        }
+
+        .maquina-volver {
+            display: inline-block;
+            margin-bottom: 24px;
+            color: #197e7a;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .maquina-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(300px, .8fr);
+            gap: 35px;
+            align-items: start;
+        }
+
+        .maquina-foto-principal {
+            width: 100%;
+            height: 440px;
+            object-fit: contain;
+            background: #eef1ef;
+            border-radius: 10px;
+            cursor: zoom-in;
+        }
+
+        .maquina-miniaturas {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .maquina-miniaturas button {
+            height: 85px;
+            padding: 0;
+            overflow: hidden;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #eef1ef;
+        }
+
+        .maquina-miniaturas button.activa {
+            border-color: #197e7a;
+        }
+
+        .maquina-miniaturas img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .maquina-etiqueta {
+            display: inline-block;
+            padding: 7px 11px;
+            border-radius: 4px;
+            background: #e8f3ef;
+            color: #167b6e;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .maquina-datos h1 {
+            margin: 14px 0 12px;
+            color: #17201c;
+            font-size: 36px;
+            line-height: 1.15;
+        }
+
+        .maquina-subtitulo {
+            color: #69736f;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .maquina-precio {
+            margin: 24px 0;
+            padding: 20px 0;
+            border-top: 1px solid #e2e7e5;
+            border-bottom: 1px solid #e2e7e5;
+        }
+
+        .maquina-precio small {
+            display: block;
+            margin-bottom: 7px;
+            color: #7b8581;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .maquina-precio strong {
+            color: #102c25;
+            font-size: 32px;
+        }
+
+        .maquina-boton {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px;
+            border-radius: 7px;
+            background: #168454;
+            color: white;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .maquina-boton:hover {
+            background: #106b43;
+        }
+
+        .aviso-stock {
+            margin-top: 15px;
+            padding: 18px 20px;
+            background: #edf7f3;
+            border-left: 5px solid #16875b;
+            border-radius: 7px;
+            color: #252b2d;
+            line-height: 1.7;
+        }
+
+        .aviso-stock-titulo {
+            margin-bottom: 6px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .aviso-stock p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .aviso-stock-ubicacion {
+            margin: 10px 0 0;
+            color: #737b7d;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        .maquina-caracteristicas {
+            margin-top: 45px;
+        }
+
+        .maquina-tabla {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .maquina-panel {
+            padding: 22px;
+            border: 1px solid #e2e7e5;
+            border-radius: 10px;
+        }
+
+        .maquina-panel h2 {
+            color: #167b6e;
+            font-size: 14px;
+        }
+
+        .maquina-fila {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 12px 0;
+            border-bottom: 1px solid #edf0ee;
+            font-size: 13px;
+        }
+
+        .maquina-fila:last-child {
+            border-bottom: none;
+        }
+
+        .maquina-fila span {
+            color: #69736f;
+        }
+
+        .maquina-fila strong {
+            text-align: right;
+        }
+
+        @media (max-width: 850px) {
+            .maquina-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .maquina-foto-principal {
+                height: 360px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .maquina-ficha {
+                padding: 30px 16px 50px;
+            }
+
+            .maquina-foto-principal {
+                height: 270px;
+            }
+
+            .maquina-miniaturas button {
+                height: 65px;
+            }
+
+            .maquina-datos h1 {
+                font-size: 30px;
+            }
+
+            .maquina-tabla {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="pagina-categoria">
+
+<header>
+    <nav class="encabezado">
+        <button class="boton-menu" type="button"
+            onclick="abrirMenu()" aria-label="Abrir menú">☰</button>
+
+        <a href="index.html" class="logo-encabezado">
+            <img src="Imagenes/portada.png" alt="Maquinarias Troya">
+        </a>
+
+        <div class="menu-desktop">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#nosotros">Sobre nosotros</a>
+            <a href="index.html#maquinaria" class="activo">Maquinaria</a>
+            <a href="index.html#contacto">Contacto</a>
+        </div>
+
+        <div class="fondo-menu" onclick="cerrarMenu()"></div>
+
+        <div class="menu-lateral">
+            <button class="cerrar-menu" type="button"
+                onclick="cerrarMenu()" aria-label="Cerrar menú">✕</button>
+            <a href="index.html" onclick="cerrarMenu()">Inicio</a>
+            <a href="index.html#nosotros" onclick="cerrarMenu()">Sobre nosotros</a>
+            <a href="embolsadoras.html" onclick="cerrarMenu()">Embolsadoras</a>
+            <a href="index.html#contacto" onclick="cerrarMenu()">Contacto</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="categoria-portada">
+        <div class="categoria-portada-contenido">
+            <span>MAQUINARIAS TROYA</span>
+            <h1>Embolsadoras</h1>
+            <p>Maquinaria agrícola disponible.</p>
+        </div>
+    </section>
+
+    <section class="maquina-ficha">
+        <a href="embolsadoras.html" class="maquina-volver">← Volver a embolsadoras</a>
+
+        <div class="maquina-grid">
+            <div>
+                <img
+                    id="maquinaFotoPrincipal"
+                    class="maquina-foto-principal"
+                    src="Imagenes/embolsadora_ascanelli/embolsadora-ascanelli-1.jpg"
+                    alt="Embolsadora Ascanelli GRUB de 5 pies, vista exterior"
+                    onclick="abrirFoto()"
+                >
+
+                <div class="maquina-miniaturas">
+                    <button class="activa" onclick="cambiarFoto(1, this)" aria-label="Ver foto 1">
+                        <img src="Imagenes/embolsadora_ascanelli/embolsadora-ascanelli-1.jpg" alt="Embolsadora Ascanelli, vista 1">
+                    </button>
+                    <button onclick="cambiarFoto(2, this)" aria-label="Ver foto 2">
+                        <img src="Imagenes/embolsadora_ascanelli/embolsadora-ascanelli-2.jpg" alt="Embolsadora Ascanelli, vista 2">
+                    </button>
+                    <button onclick="cambiarFoto(3, this)" aria-label="Ver foto 3">
+                        <img src="Imagenes/embolsadora_ascanelli/embolsadora-ascanelli-3.jpg" alt="Embolsadora Ascanelli, vista 3">
+                    </button>
+                    <button onclick="cambiarFoto(4, this)" aria-label="Ver foto 4">
+                        <img src="Imagenes/embolsadora_ascanelli/embolsadora-ascanelli-4.jpg" alt="Embolsadora Ascanelli, vista 4">
+                    </button>
+                    <button onclick="cambiarFoto(5, this)" aria-label="Ver foto 5">
+                        <img src="Imagenes/embolsadora_ascanelli/embolsadora-ascanelli-5.jpg" alt="Embolsadora Ascanelli, vista 5">
+                    </button>
+                    <button onclick="cambiarFoto(6, this)" aria-label="Ver foto 6">
+                        <img src="Imagenes/embolsadora_ascanelli/embolsadora-ascanelli-6.jpg" alt="Embolsadora Ascanelli, vista 6">
+                    </button>
+                    <button onclick="cambiarFoto(7, this)" aria-label="Ver foto 7">
+                        <img src="Imagenes/embolsadora_ascanelli/embolsadora-ascanelli-7.jpg" alt="Embolsadora Ascanelli, vista 7">
+                    </button>
+                    
+                </div>
+            </div>
+
+            <div class="maquina-datos">
+                <span class="maquina-etiqueta">MAQUINARIA AGRÍCOLA · ASCANELLI</span>
+                <h1>Embolsadora Ascanelli GRUB 5 pies</h1>
+
+                <p class="maquina-subtitulo">
+                    Embolsadora Ascanelli GRUB de 5 pies, año 2024. Está nueva, prácticamente sin uso, con dos bolsones hechos.
+                    Se toma pickup y financiación charlable. Entrega y cheques. Precio en dólares    Consultas [hidden information]
+                </p>
+
+                <div class="maquina-precio">
+                    <small>Precio de la máquina</small>
+                    <strong>US$ 15.000</strong>
+                    <p>Consultá para ampliar detalles y coordinar una visita.</p>
+                </div>
+
+                <a class="maquina-boton"
+                    href="https://wa.me/5492392407678?text=Hola%20Maquinarias%20Troya%2C%20consulto%20por%20la%20embolsadora%20Ascanelli%20GRUB%205%20pies."
+                    target="_blank" rel="noopener noreferrer">
+                    Consultar por WhatsApp →
+                </a>
+
+                <div class="aviso-stock">
+                    <div class="aviso-stock-titulo">
+                        🚜 ¡Tenemos mucho más para ofrecerte!
+                    </div>
+                    <p>
+                        No todo nuestro stock está publicado en la web.
+                        Si estás buscando una máquina, un camión o algún
+                        equipo en particular, consultanos por WhatsApp.
+                        ¡Te ayudamos a encontrar lo que necesitás!
+                    </p>
+                </div>
+
+                <p class="aviso-stock-ubicacion">
+                    Maquinarias Troya · 30 de Agosto, Buenos Aires
+                </p>
+            </div>
+        </div>
+
+        <section class="maquina-caracteristicas">
+            <h2>Características de la embolsadora</h2>
+            <p>Consultá para ampliar detalles y coordinar una visita.</p>
+
+            <div class="maquina-tabla">
+                <div class="maquina-panel">
+                    <h2>DATOS DE LA MÁQUINA</h2>
+                    <div class="maquina-fila"><span>Marca</span><strong>Ascanelli</strong></div>
+                    <div class="maquina-fila"><span>Modelo</span><strong>GRUB 5 pies</strong></div>
+                    <div class="maquina-fila"><span>Año</span><strong>2024</strong></div>
+                    <div class="maquina-fila"><span>Serie</span><strong>24</strong></div>
+                    <div class="maquina-fila"><span>Número</span><strong>8207</strong></div>
+                </div>
+
+                <div class="maquina-panel">
+                    <h2>ESTADO Y CONDICIONES</h2>
+                    <div class="maquina-fila"><span>Estado informado</span><strong>Nueva · Prácticamente sin uso</strong></div>
+                    <div class="maquina-fila"><span>Uso informado</span><strong>Dos bolsones hechos</strong></div>
+                    <div class="maquina-fila"><span>Toma de pickup</span><strong>A consultar</strong></div>
+                    <div class="maquina-fila"><span>Precio</span><strong>US$ 15.000</strong></div>
+                </div>
+            </div>
+        </section>
+    </section>
+</main>
+
+<footer id="contacto">
+    <div class="footer-contenido">
+        <div class="footer-marca">
+            <img src="Imagenes/portada.png" alt="Maquinarias Troya">
+            <p>Compra y venta de maquinaria agrícola y vial.</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#nosotros">Sobre nosotros</a>
+            <a href="index.html#maquinaria">Maquinaria</a>
+            <a href="index.html#contacto">Contacto</a>
+        </div>
+
+        <div class="footer-contacto">
+            <p>📍 30 de Agosto, Buenos Aires</p>
+            <p>📞 02392 407678</p>
+            <a href="https://www.instagram.com/maquinariastroya/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.facebook.com/bartolo.troya" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2026 Maquinarias Troya. Todos los derechos reservados.</span>
+        <span>Maquinaria agrícola y vial.</span>
+    </div>
+</footer>
+
+<div id="maquinaVisor"
+    style="display:none; position:fixed; inset:0; z-index:99999; background:rgba(0,0,0,.92); justify-content:center; align-items:center; padding:20px;"
+    onclick="cerrarFoto()">
+    <button type="button" onclick="cerrarFoto()"
+        style="position:absolute; top:15px; right:25px; color:white; background:transparent; border:0; font-size:42px; cursor:pointer;"
+        aria-label="Cerrar imagen">×</button>
+    <img id="maquinaFotoAmpliada" src="" alt="Foto ampliada de la embolsadora Ascanelli"
+        style="max-width:95%; max-height:90vh; object-fit:contain;">
+</div>
+
+<script>
+    function abrirMenu() {
+        document.body.classList.add("menu-abierto");
+    }
+
+    function cerrarMenu() {
+        document.body.classList.remove("menu-abierto");
+    }
+
+    function cambiarFoto(numero, boton) {
+        const ruta = "Imagenes/embolsadora_ascanelli/embolsadora-ascanelli-" + numero + ".jpg";
+        document.getElementById("maquinaFotoPrincipal").src = ruta;
+
+        document.querySelectorAll(".maquina-miniaturas button").forEach(function(item) {
+            item.classList.remove("activa");
+        });
+
+        boton.classList.add("activa");
+    }
+
+    function abrirFoto() {
+        document.getElementById("maquinaFotoAmpliada").src =
+            document.getElementById("maquinaFotoPrincipal").src;
+        document.getElementById("maquinaVisor").style.display = "flex";
+        document.body.style.overflow = "hidden";
+    }
+
+    function cerrarFoto() {
+        document.getElementById("maquinaVisor").style.display = "none";
+        document.body.style.overflow = "";
+    }
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            cerrarFoto();
+            cerrarMenu();
+        }
+    });
+</script>
+
+</body>
+</html>
