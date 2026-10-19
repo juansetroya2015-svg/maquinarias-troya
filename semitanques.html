@@ -83,22 +83,21 @@
                 </div>
             </div>
 
-            <div class="catalogo-vacio">
-                <div class="catalogo-vacio-icono" aria-hidden="true">🚛</div>
-                <h3>¿Buscás semitanques?</h3>
-                <p>
-                    Puede que tengamos opciones que todavía no publicamos en la web.
-                    Consultanos por disponibilidad y te ayudamos a encontrar lo que necesitás.
-                </p>
-                <a
-                    href="https://wa.me/5492392407678?text=Hola%2C%20quer%C3%ADa%20consultar%20por%20semitanques%20disponibles."
-                    class="boton-consultar"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Consultar por WhatsApp <span>→</span>
-                </a>
+            <div class="grid-maquinas">
+                <article class="maquina-card" role="link" tabindex="0" style="cursor: pointer;" onclick="if(!event.target.closest('a,button')) window.location.href='semitanque-dipolvere.html'" onkeydown="if((event.key==='Enter'||event.key===' ') && event.target===this){event.preventDefault();window.location.href='semitanque-dipolvere.html'}">
+                    <div class="maquina-imagen">
+                        <img src="Imagenes/semitanque-dipolvere/semitanque-dipolvere-1.jpeg" alt="Semitanque Dipolvere" loading="lazy">
+                    </div>
+                    <div class="maquina-info">
+                        <span class="maquina-tipo">SEMITANQUE</span>
+                        <h3>Dipolvere</h3>
+                        <p>Usado · Disponible en 30 de Agosto, Buenos Aires.</p>
+                        <p class="precio-maquina">$70.000.000</p>
+                        <a href="semitanque-dipolvere.html" class="boton-ficha-camion">Ver ficha <span>→</span></a>
+                    </div>
+                </article>
             </div>
+
         </section>
 
     </main>
